@@ -183,9 +183,7 @@ export default function Index() {
             <div className="animate-fade-in order-2 md:order-1">
               <Badge className="mb-4">О логопеде</Badge>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Евсеева Елена Сергеевна</h2>
-              <p className="text-lg text-muted-foreground mb-4">
-                Учитель-логопед высшей квалификационной категории
-              </p>
+              <p className="text-lg text-muted-foreground mb-4">Учитель-логопед </p>
               <div className="space-y-4 mb-6">
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
