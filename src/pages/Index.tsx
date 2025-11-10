@@ -113,7 +113,7 @@ export default function Index() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
               <Badge className="bg-primary/10 text-primary hover:bg-primary/20">
-                Учитель-логопед высшей категории
+                Учитель-логопед
               </Badge>
               <h1 className="text-5xl md:text-6xl font-bold leading-tight">
                 Правильная речь - 
