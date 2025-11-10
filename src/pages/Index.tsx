@@ -124,13 +124,13 @@ export default function Index() {
                 Индивидуальный подход к каждому ребенку.
               </p>
               <div className="flex gap-4">
-                <Button size="lg" onClick={() => scrollToSection('контакты')} className="gap-2">
-                  <Icon name="Calendar" size={20} />
-                  Записаться на занятие
-                </Button>
-                <Button size="lg" variant="outline" onClick={() => scrollToSection('методики')} className="gap-2">
+                <Button size="lg" onClick={() => scrollToSection('методики')} className="gap-2">
                   <Icon name="BookOpen" size={20} />
                   Узнать больше
+                </Button>
+                <Button size="lg" variant="outline" onClick={() => scrollToSection('контакты')} className="gap-2">
+                  <Icon name="Mail" size={20} />
+                  Контакты
                 </Button>
               </div>
               <div className="grid grid-cols-3 gap-4 pt-8">
