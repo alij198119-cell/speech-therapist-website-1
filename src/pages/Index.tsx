@@ -223,7 +223,7 @@ export default function Index() {
                 <img
                   src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/7c66309a-8703-4a04-abc9-28e4db339271.jpg"
                   alt="Учитель-логопед"
-                  className="relative rounded-3xl shadow-2xl w-full h-[500px] object-fill"
+                  className="relative rounded-3xl shadow-2xl w-full h-[500px] object-contain"
                 />
               </div>
             </div>
