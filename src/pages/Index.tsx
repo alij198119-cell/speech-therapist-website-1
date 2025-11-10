@@ -151,7 +151,7 @@ export default function Index() {
             <div className="relative animate-slide-up">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-3xl"></div>
               <img
-                src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/1c97be0f-f5f8-430b-9afe-9c119f9db33f.jpg"
+                src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/7c66309a-8703-4a04-abc9-28e4db339271.jpg"
                 alt="Логопедия"
                 className="relative rounded-3xl shadow-2xl w-full"
               />
@@ -192,7 +192,7 @@ export default function Index() {
 
           <div className="relative rounded-3xl overflow-hidden shadow-2xl animate-fade-in">
             <img
-              src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/a52fc35b-e151-45fc-8fc4-d7c7e86569e2.jpg"
+              src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/a0617b9d-31ce-4a54-9d76-2bdca846c7dc.jpg"
               alt="Методики работы"
               className="w-full h-[400px] object-cover"
             />
@@ -275,7 +275,7 @@ export default function Index() {
               </p>
               <div className="relative rounded-2xl overflow-hidden shadow-xl">
                 <img
-                  src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/543fdbb1-0361-4df6-961a-9fc78a75797b.jpg"
+                  src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/fe4d664d-41ca-4cc1-9ecf-234d6bbc3948.jpg"
                   alt="Занятия с родителями"
                   className="w-full h-[300px] object-cover"
                 />
