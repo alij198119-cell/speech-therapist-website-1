@@ -9,6 +9,7 @@ const BACKEND_URL = 'https://functions.poehali.dev/4a75476f-857b-4505-813c-ced54
 
 export default function Index() {
   const [activeSection, setActiveSection] = useState('home');
+  const [selectedImage, setSelectedImage] = useState<{ url: string; title: string } | null>(null);
 
   const handleDownload = async (materialId: string, materialName: string) => {
     try {
@@ -235,7 +236,7 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group">
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/770c23a4-9cce-4911-9a8d-bb25c302aaf8.jpg', title: 'Кабинет логопеда' })}>
               <div className="relative h-72 overflow-hidden">
                 <img
                   src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/770c23a4-9cce-4911-9a8d-bb25c302aaf8.jpg"
@@ -248,7 +249,7 @@ export default function Index() {
               </div>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '100ms' }}>
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '100ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/c66aa284-e54a-4bd5-9da2-2abc6f46fa39.jpg', title: 'Индивидуальное занятие' })}>
               <div className="relative h-72 overflow-hidden">
                 <img
                   src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/c66aa284-e54a-4bd5-9da2-2abc6f46fa39.jpg"
@@ -261,7 +262,7 @@ export default function Index() {
               </div>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '200ms' }}>
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '200ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/44cd36ad-3d22-4b55-b784-3ccf1d78ca69.jpg', title: 'Групповые занятия' })}>
               <div className="relative h-72 overflow-hidden">
                 <img
                   src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/44cd36ad-3d22-4b55-b784-3ccf1d78ca69.jpg"
@@ -274,7 +275,7 @@ export default function Index() {
               </div>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '300ms' }}>
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '300ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/81c3e6c6-8c5c-4be6-a0c7-c6d9b20d10e4.jpg', title: 'Успехи наших детей' })}>
               <div className="relative h-72 overflow-hidden">
                 <img
                   src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/81c3e6c6-8c5c-4be6-a0c7-c6d9b20d10e4.jpg"
@@ -287,7 +288,7 @@ export default function Index() {
               </div>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '400ms' }}>
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '400ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/7c66309a-8703-4a04-abc9-28e4db339271.jpg', title: 'Дидактические материалы' })}>
               <div className="relative h-72 overflow-hidden">
                 <img
                   src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/7c66309a-8703-4a04-abc9-28e4db339271.jpg"
@@ -675,6 +676,30 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 animate-fade-in"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            className="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+            onClick={() => setSelectedImage(null)}
+          >
+            <Icon name="X" size={24} className="text-white" />
+          </button>
+          
+          <div className="max-w-6xl w-full max-h-[90vh] flex flex-col items-center">
+            <img
+              src={selectedImage.url}
+              alt={selectedImage.title}
+              className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <p className="text-white text-xl font-medium mt-6">{selectedImage.title}</p>
+          </div>
+        </div>
+      )}
 
       <footer className="py-8 px-4 border-t bg-muted/20">
         <div className="container mx-auto text-center text-muted-foreground">
