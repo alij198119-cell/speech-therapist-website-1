@@ -221,9 +221,9 @@ export default function Index() {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-3xl"></div>
                 <img
-                  src="https://cdn.poehali.dev/files/2e32b223-7a25-4182-acb0-1125683c4148.jpg"
+                  src="https://cdn.poehali.dev/files/ac917d4f-8fec-4a64-a984-20208037fed0.png"
                   alt="Учитель-логопед"
-                  className="relative rounded-3xl shadow-2xl w-full h-[500px] object-contain"
+                  className="relative rounded-3xl shadow-2xl w-full h-[500px] object-cover"
                 />
               </div>
             </div>
