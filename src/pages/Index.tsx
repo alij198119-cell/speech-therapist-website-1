@@ -13,10 +13,22 @@ export default function Index() {
   const handleDownload = async (materialId: string, materialName: string) => {
     try {
       const response = await fetch(`${BACKEND_URL}?id=${materialId}`);
-      const data = await response.json();
       
       if (response.ok) {
-        alert(`📥 ${data.name}\n\nРазмер: ${data.size}\n\n${data.message}`);
+        // Get PDF as blob
+        const blob = await response.blob();
+        
+        // Create download link
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${materialId}.pdf`;
+        document.body.appendChild(a);
+        a.click();
+        
+        // Cleanup
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
       } else {
         alert('Ошибка при скачивании материала');
       }

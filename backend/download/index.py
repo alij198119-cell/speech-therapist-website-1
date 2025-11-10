@@ -1,11 +1,58 @@
 import json
+import base64
 from typing import Dict, Any
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.units import cm
+from reportlab.pdfgen import canvas
+from io import BytesIO
+
+def generate_pdf(material_id: str, material: Dict[str, Any]) -> bytes:
+    '''Generate PDF content for the material'''
+    buffer = BytesIO()
+    pdf = canvas.Canvas(buffer, pagesize=A4)
+    width, height = A4
+    
+    # Title
+    pdf.setFont("Helvetica-Bold", 24)
+    pdf.drawString(2*cm, height - 3*cm, "Logopediya v DOU")
+    
+    # Description
+    pdf.setFont("Helvetica", 12)
+    pdf.drawString(2*cm, height - 5*cm, material['description'])
+    
+    # Content placeholder
+    pdf.setFont("Helvetica", 10)
+    y_position = height - 7*cm
+    
+    content_lines = [
+        "Demo PDF file.",
+        "",
+        "Full methodological material will be placed here:",
+        f"- {material['name']}",
+        "",
+        "Contact the speech therapist through the 'Contacts' section",
+        "on the website to get the full version.",
+        "",
+        "Thank you for your interest in our materials!",
+    ]
+    
+    for line in content_lines:
+        pdf.drawString(2*cm, y_position, line)
+        y_position -= 0.6*cm
+    
+    # Footer
+    pdf.setFont("Helvetica-Oblique", 8)
+    pdf.drawString(2*cm, 2*cm, "Logopediya v DOU | https://poehali.dev")
+    
+    pdf.save()
+    buffer.seek(0)
+    return buffer.read()
 
 def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     '''
-    Business: Provide download links for educational materials
+    Business: Generate and download educational materials as PDF files
     Args: event with httpMethod and queryStringParameters (material_id)
-    Returns: HTTP response with file download or error
+    Returns: HTTP response with PDF file or error
     '''
     method: str = event.get('httpMethod', 'GET')
     
@@ -95,21 +142,19 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     
     material = materials[material_id]
     
-    # In real implementation, this would return actual file download
-    # For now, return material info with download URL placeholder
+    # Generate PDF file
+    pdf_content = generate_pdf(material_id, material)
+    pdf_base64 = base64.b64encode(pdf_content).decode('utf-8')
+    
+    # Return PDF file as base64
     return {
         'statusCode': 200,
         'headers': {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
+            'Content-Type': 'application/pdf',
+            'Content-Disposition': f'attachment; filename="{material["filename"]}"',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Expose-Headers': 'Content-Disposition'
         },
-        'body': json.dumps({
-            'id': material_id,
-            'name': material['name'],
-            'filename': material['filename'],
-            'size': material['size'],
-            'description': material['description'],
-            'download_url': f'/api/download?id={material_id}',
-            'message': 'Материал готов к скачиванию'
-        })
+        'isBase64Encoded': True,
+        'body': pdf_base64
     }

@@ -11,17 +11,10 @@
       "bodyMatcher": "partial"
     },
     {
-      "name": "Get specific material info",
+      "name": "Download PDF file",
       "method": "GET",
       "path": "/?id=articulation",
-      "expectedStatus": 200,
-      "expectedBody": {
-        "id": "articulation",
-        "name": "string",
-        "filename": "string",
-        "download_url": "string"
-      },
-      "bodyMatcher": "partial"
+      "expectedStatus": 200
     },
     {
       "name": "Handle OPTIONS for CORS",
