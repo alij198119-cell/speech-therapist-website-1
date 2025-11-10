@@ -133,20 +133,7 @@ export default function Index() {
                   Контакты
                 </Button>
               </div>
-              <div className="grid grid-cols-3 gap-4 pt-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">7+</div>
-                  <div className="text-sm text-muted-foreground">лет опыта</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-secondary">200+</div>
-                  <div className="text-sm text-muted-foreground">детей помогли</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-accent">98%</div>
-                  <div className="text-sm text-muted-foreground">результат</div>
-                </div>
-              </div>
+
             </div>
             <div className="relative animate-slide-up">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-3xl"></div>
