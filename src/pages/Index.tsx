@@ -191,7 +191,7 @@ export default function Index() {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Образование</h4>
-                    <p className="text-muted-foreground">Высшее педагогическое образование, специальность "Логопедия"</p>
+                    <p className="text-muted-foreground">Высшее психолого-педагогическое образование</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
