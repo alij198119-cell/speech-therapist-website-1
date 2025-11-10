@@ -199,8 +199,8 @@ export default function Index() {
                     <Icon name="Award" size={20} className="text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Опыт работы</h4>
-                    <p className="text-muted-foreground">Более 7 лет работы с детьми дошкольного возраста</p>
+                    <h4 className="font-semibold mb-1"></h4>
+                    <p className="text-muted-foreground"></p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -208,8 +208,8 @@ export default function Index() {
                     <Icon name="Star" size={20} className="text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Достижения</h4>
-                    <p className="text-muted-foreground">200+ детей получили помощь, 98% родителей довольны результатами</p>
+                    <h4 className="font-semibold mb-1"></h4>
+                    <p className="text-muted-foreground"></p>
                   </div>
                 </div>
               </div>
