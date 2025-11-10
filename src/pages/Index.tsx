@@ -248,7 +248,7 @@ export default function Index() {
                   <Icon name="Award" size={40} className="text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-center mb-2">Диплом о высшем образовании</h3>
-                <p className="text-muted-foreground text-center text-sm">Специальность "Логопедия"</p>
+                <p className="text-muted-foreground text-center text-sm">Специальность "Педагогика и психология начального общего образования"</p>
                 <Button variant="outline" className="mt-6 gap-2" size="sm">
                   <Icon name="Plus" size={16} />
                   Загрузить фото
