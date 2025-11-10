@@ -665,9 +665,9 @@ export default function Index() {
                 </div>
                 <CardTitle>Часы работы</CardTitle>
                 <CardDescription className="text-base">
-                  Пн, Пт: 9:00 - 13:00
+                  Пн, Пт: 13:00 - 17:00
                   <br />
-                  Вт, Ср, Чт: 13:00 - 17:00
+                  Вт, Ср, Чт: 9:00 - 13:00
                   <br />
                   Сб-Вс: Выходной
                 </CardDescription>
