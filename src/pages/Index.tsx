@@ -231,6 +231,70 @@ export default function Index() {
         </div>
       </section>
 
+      <section id="сертификаты" className="py-16 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12 animate-fade-in">
+            <Badge className="mb-4">Квалификация</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Сертификаты и дипломы
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Постоянное повышение квалификации и профессиональный рост
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up group cursor-pointer">
+              <div className="relative h-80 bg-gradient-to-br from-primary/5 to-secondary/5 flex flex-col items-center justify-center p-6">
+                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Icon name="Award" size={40} className="text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-center mb-2">Диплом о высшем образовании</h3>
+                <p className="text-muted-foreground text-center text-sm">Специальность "Логопедия"</p>
+                <Button variant="outline" className="mt-6 gap-2" size="sm">
+                  <Icon name="Plus" size={16} />
+                  Загрузить фото
+                </Button>
+              </div>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up group cursor-pointer" style={{ animationDelay: '100ms' }}>
+              <div className="relative h-80 bg-gradient-to-br from-primary/5 to-secondary/5 flex flex-col items-center justify-center p-6">
+                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Icon name="FileCheck" size={40} className="text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-center mb-2">Сертификат повышения квалификации</h3>
+                <p className="text-muted-foreground text-center text-sm">Современные методики коррекции речи</p>
+                <Button variant="outline" className="mt-6 gap-2" size="sm">
+                  <Icon name="Plus" size={16} />
+                  Загрузить фото
+                </Button>
+              </div>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up group cursor-pointer" style={{ animationDelay: '200ms' }}>
+              <div className="relative h-80 bg-gradient-to-br from-primary/5 to-secondary/5 flex flex-col items-center justify-center p-6">
+                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Icon name="Medal" size={40} className="text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-center mb-2">Дополнительные сертификаты</h3>
+                <p className="text-muted-foreground text-center text-sm">Участие в конференциях и семинарах</p>
+                <Button variant="outline" className="mt-6 gap-2" size="sm">
+                  <Icon name="Plus" size={16} />
+                  Загрузить фото
+                </Button>
+              </div>
+            </Card>
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-muted-foreground text-sm">
+              Нажмите на карточку, чтобы загрузить изображение вашего сертификата или диплома
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section id="методики" className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto">
           <div className="text-center mb-12 animate-fade-in">
