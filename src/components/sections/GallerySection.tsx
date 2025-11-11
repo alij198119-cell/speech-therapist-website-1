@@ -84,41 +84,54 @@ export default function GallerySection() {
               </div>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '300ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/82aa36bd-ce65-478a-84ca-9f23e7dfec93.jpg', title: 'Мелкая моторика' })}>
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '600ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/641ea729-6c8b-4ffd-961f-beef9e54799b.png', title: 'Индивидуальное занятие - творческие задания' })}>
               <div className="relative h-72 overflow-hidden">
                 <img
-                  src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/82aa36bd-ce65-478a-84ca-9f23e7dfec93.jpg"
-                  alt="Мелкая моторика"
+                  src="https://cdn.poehali.dev/files/641ea729-6c8b-4ffd-961f-beef9e54799b.png"
+                  alt="Индивидуальное занятие - творческие задания"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <p className="text-white font-medium">Мелкая моторика</p>
+                  <p className="text-white font-medium">Индивидуальное занятие - творческие задания</p>
                 </div>
               </div>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '400ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/d28ee28f-aaf2-48a7-9b42-7f38b8c0ba8f.jpg', title: 'Артикуляционная гимнастика' })}>
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '700ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/0e3d339d-97e7-467e-8912-541928fcdb43.png', title: 'Индивидуальное занятие - звукопроизношение' })}>
               <div className="relative h-72 overflow-hidden">
                 <img
-                  src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/d28ee28f-aaf2-48a7-9b42-7f38b8c0ba8f.jpg"
-                  alt="Артикуляционная гимнастика"
+                  src="https://cdn.poehali.dev/files/0e3d339d-97e7-467e-8912-541928fcdb43.png"
+                  alt="Индивидуальное занятие - звукопроизношение"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <p className="text-white font-medium">Артикуляционная гимнастика</p>
+                  <p className="text-white font-medium">Индивидуальное занятие - звукопроизношение</p>
                 </div>
               </div>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '500ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/23b95f91-d8e5-4bcb-9be8-dffafcb17fa1.jpg', title: 'Логоритмика' })}>
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '800ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/1f8048de-3c66-46ad-a0c1-7569cad33900.png', title: 'Индивидуальное занятие - артикуляционная моторика' })}>
               <div className="relative h-72 overflow-hidden">
                 <img
-                  src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/23b95f91-d8e5-4bcb-9be8-dffafcb17fa1.jpg"
-                  alt="Логоритмика"
+                  src="https://cdn.poehali.dev/files/1f8048de-3c66-46ad-a0c1-7569cad33900.png"
+                  alt="Индивидуальное занятие - артикуляционная моторика"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <p className="text-white font-medium">Логоритмика</p>
+                  <p className="text-white font-medium">Индивидуальное занятие - артикуляционная моторика</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '900ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/c689316a-87cf-4c83-818a-3860dc508433.png', title: 'Индивидуальное занятие - развитие речи' })}>
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/files/c689316a-87cf-4c83-818a-3860dc508433.png"
+                  alt="Индивидуальное занятие - развитие речи"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <p className="text-white font-medium">Индивидуальное занятие - развитие речи</p>
                 </div>
               </div>
             </Card>
