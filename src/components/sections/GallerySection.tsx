@@ -71,20 +71,46 @@ export default function GallerySection() {
               </div>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '500ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/7097cce0-929a-4b91-8008-b343f76875d8.png', title: 'Групповые занятия' })}>
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '500ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/fd50e6a0-e21b-4087-9565-ec1473dc88cd.png', title: 'Групповое занятие - дыхательная гимнастика' })}>
               <div className="relative h-72 overflow-hidden">
                 <img
-                  src="https://cdn.poehali.dev/files/7097cce0-929a-4b91-8008-b343f76875d8.png"
-                  alt="Групповые занятия"
+                  src="https://cdn.poehali.dev/files/fd50e6a0-e21b-4087-9565-ec1473dc88cd.png"
+                  alt="Групповое занятие - дыхательная гимнастика"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <p className="text-white font-medium">Групповые занятия</p>
+                  <p className="text-white font-medium">Групповое занятие - дыхательная гимнастика</p>
                 </div>
               </div>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '600ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/641ea729-6c8b-4ffd-961f-beef9e54799b.png', title: 'Индивидуальное занятие - творческие задания' })}>
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '600ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/4647050d-6685-43d2-8c04-7f78f389df1b.png', title: 'Групповое занятие - творческие задания' })}>
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/files/4647050d-6685-43d2-8c04-7f78f389df1b.png"
+                  alt="Групповое занятие - творческие задания"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <p className="text-white font-medium">Групповое занятие - творческие задания</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '700ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/39275cd4-7300-455a-935e-552137b922d3.png', title: 'Групповое занятие - дыхательные упражнения' })}>
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/files/39275cd4-7300-455a-935e-552137b922d3.png"
+                  alt="Групповое занятие - дыхательные упражнения"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <p className="text-white font-medium">Групповое занятие - дыхательные упражнения</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '800ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/641ea729-6c8b-4ffd-961f-beef9e54799b.png', title: 'Индивидуальное занятие - творческие задания' })}>
               <div className="relative h-72 overflow-hidden">
                 <img
                   src="https://cdn.poehali.dev/files/641ea729-6c8b-4ffd-961f-beef9e54799b.png"
@@ -97,7 +123,7 @@ export default function GallerySection() {
               </div>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '700ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/0e3d339d-97e7-467e-8912-541928fcdb43.png', title: 'Индивидуальное занятие - звукопроизношение' })}>
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '900ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/0e3d339d-97e7-467e-8912-541928fcdb43.png', title: 'Индивидуальное занятие - звукопроизношение' })}>
               <div className="relative h-72 overflow-hidden">
                 <img
                   src="https://cdn.poehali.dev/files/0e3d339d-97e7-467e-8912-541928fcdb43.png"
@@ -110,7 +136,7 @@ export default function GallerySection() {
               </div>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '800ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/1f8048de-3c66-46ad-a0c1-7569cad33900.png', title: 'Индивидуальное занятие - артикуляционная моторика' })}>
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '1000ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/1f8048de-3c66-46ad-a0c1-7569cad33900.png', title: 'Индивидуальное занятие - артикуляционная моторика' })}>
               <div className="relative h-72 overflow-hidden">
                 <img
                   src="https://cdn.poehali.dev/files/1f8048de-3c66-46ad-a0c1-7569cad33900.png"
@@ -123,7 +149,7 @@ export default function GallerySection() {
               </div>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '900ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/c689316a-87cf-4c83-818a-3860dc508433.png', title: 'Индивидуальное занятие - развитие речи' })}>
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '1100ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/c689316a-87cf-4c83-818a-3860dc508433.png', title: 'Индивидуальное занятие - развитие речи' })}>
               <div className="relative h-72 overflow-hidden">
                 <img
                   src="https://cdn.poehali.dev/files/c689316a-87cf-4c83-818a-3860dc508433.png"
