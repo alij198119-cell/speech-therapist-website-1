@@ -19,23 +19,62 @@ export default function GallerySection() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '100ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/ffc83f06-7eee-44dd-babb-85bbb06b4496.png', title: 'Индивидуальное занятие' })}>
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '100ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/2497718e-2dca-4265-b59a-0ab57939c111.jpg', title: 'Индивидуальное занятие - дыхательные упражнения' })}>
               <div className="relative h-72 overflow-hidden">
                 <img
-                  src="https://cdn.poehali.dev/files/ffc83f06-7eee-44dd-babb-85bbb06b4496.png"
-                  alt="Индивидуальное занятие"
+                  src="https://cdn.poehali.dev/files/2497718e-2dca-4265-b59a-0ab57939c111.jpg"
+                  alt="Индивидуальное занятие - дыхательные упражнения"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <p className="text-white font-medium">Индивидуальное занятие</p>
+                  <p className="text-white font-medium">Индивидуальное занятие - дыхательные упражнения</p>
                 </div>
               </div>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '200ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/ac917d4f-8fec-4a64-a984-20208037fed0.png', title: 'Групповые занятия' })}>
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '200ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/17541b82-f7de-46f5-9d1f-1b836f4833a0.jpg', title: 'Индивидуальное занятие - артикуляция' })}>
               <div className="relative h-72 overflow-hidden">
                 <img
-                  src="https://cdn.poehali.dev/files/ac917d4f-8fec-4a64-a984-20208037fed0.png"
+                  src="https://cdn.poehali.dev/files/17541b82-f7de-46f5-9d1f-1b836f4833a0.jpg"
+                  alt="Индивидуальное занятие - артикуляция"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <p className="text-white font-medium">Индивидуальное занятие - артикуляция</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '300ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/8fc18b8c-cfd1-4025-b61f-879dddb4f6f4.png', title: 'Индивидуальное занятие - постановка звуков' })}>
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/files/8fc18b8c-cfd1-4025-b61f-879dddb4f6f4.png"
+                  alt="Индивидуальное занятие - постановка звуков"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <p className="text-white font-medium">Индивидуальное занятие - постановка звуков</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '400ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/72ef95cb-50a8-49df-ad6b-0480d5d9017b.jpg', title: 'Индивидуальное занятие - мелкая моторика' })}>
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/files/72ef95cb-50a8-49df-ad6b-0480d5d9017b.jpg"
+                  alt="Индивидуальное занятие - мелкая моторика"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <p className="text-white font-medium">Индивидуальное занятие - мелкая моторика</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '500ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/7097cce0-929a-4b91-8008-b343f76875d8.png', title: 'Групповые занятия' })}>
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/files/7097cce0-929a-4b91-8008-b343f76875d8.png"
                   alt="Групповые занятия"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
