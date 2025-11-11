@@ -4,15 +4,12 @@ import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
-import HeroSection from '@/components/sections/HeroSection';
-import MethodsSection from '@/components/sections/MethodsSection';
-import GallerySection from '@/components/sections/GallerySection';
-import ContactSection from '@/components/sections/ContactSection';
 
 const BACKEND_URL = 'https://functions.poehali.dev/4a75476f-857b-4505-813c-ced5409e0204';
 
 export default function Index() {
   const [activeSection, setActiveSection] = useState('home');
+  const [selectedImage, setSelectedImage] = useState<{ url: string; title: string } | null>(null);
 
   const handleDownload = async (materialId: string, materialName: string) => {
     try {
@@ -99,10 +96,43 @@ export default function Index() {
         </div>
       </nav>
 
-      <HeroSection 
-        onLearnMore={() => scrollToSection('методики')}
-        onContact={() => scrollToSection('контакты')}
-      />
+      <section id="главная" className="pt-24 pb-16 px-4">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6 animate-fade-in">
+              <Badge className="bg-primary/10 text-primary hover:bg-primary/20">
+                Учитель-логопед
+              </Badge>
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+                Правильная речь - 
+                <span className="text-primary"> залог успеха</span>
+              </h1>
+              <p className="text-lg text-muted-foreground">
+                Помогаю детям обрести уверенность в общении через современные логопедические методики. 
+                Индивидуальный подход к каждому ребенку.
+              </p>
+              <div className="flex gap-4">
+                <Button size="lg" onClick={() => scrollToSection('методики')} className="gap-2">
+                  <Icon name="BookOpen" size={20} />
+                  Узнать больше
+                </Button>
+                <Button size="lg" variant="outline" onClick={() => scrollToSection('контакты')} className="gap-2">
+                  <Icon name="Mail" size={20} />
+                  Контакты
+                </Button>
+              </div>
+            </div>
+            <div className="relative animate-slide-up">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-3xl"></div>
+              <img
+                src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/7c66309a-8703-4a04-abc9-28e4db339271.jpg"
+                alt="Логопедия"
+                className="relative rounded-3xl shadow-2xl w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="о логопеде" className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
@@ -153,8 +183,163 @@ export default function Index() {
         </div>
       </section>
 
-      <MethodsSection />
-      <GallerySection />
+      <section id="методики" className="py-16 px-4 bg-muted/30">
+        <div className="container mx-auto">
+          <div className="text-center mb-12 animate-fade-in">
+            <Badge className="mb-4">Методики работы</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Как мы работаем</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Использую проверенные методики и современные подходы для эффективной коррекции речи
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-slide-up">
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+                <Icon name="Smile" size={28} />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Артикуляционная гимнастика</h3>
+              <p className="text-muted-foreground">Упражнения для укрепления мышц речевого аппарата</p>
+            </Card>
+            <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-slide-up" style={{ animationDelay: '100ms' }}>
+              <div className="w-14 h-14 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center mb-4">
+                <Icon name="Wind" size={28} />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Дыхательные упражнения</h3>
+              <p className="text-muted-foreground">Развитие правильного речевого дыхания</p>
+            </Card>
+            <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-slide-up" style={{ animationDelay: '200ms' }}>
+              <div className="w-14 h-14 rounded-2xl bg-accent/10 text-accent flex items-center justify-center mb-4">
+                <Icon name="Music" size={28} />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Звукопроизношение</h3>
+              <p className="text-muted-foreground">Постановка и автоматизация звуков</p>
+            </Card>
+            <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-slide-up" style={{ animationDelay: '300ms' }}>
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+                <Icon name="Ear" size={28} />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Развитие фонематического слуха</h3>
+              <p className="text-muted-foreground">Умение различать звуки речи</p>
+            </Card>
+            <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-slide-up" style={{ animationDelay: '400ms' }}>
+              <div className="w-14 h-14 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center mb-4">
+                <Icon name="Hand" size={28} />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Мелкая моторика</h3>
+              <p className="text-muted-foreground">Пальчиковые игры и упражнения</p>
+            </Card>
+            <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-slide-up" style={{ animationDelay: '500ms' }}>
+              <div className="w-14 h-14 rounded-2xl bg-accent/10 text-accent flex items-center justify-center mb-4">
+                <Icon name="Music2" size={28} />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Логоритмика</h3>
+              <p className="text-muted-foreground">Речь + движение + музыка</p>
+            </Card>
+          </div>
+        </div>
+      </section>
+      <section id="успехи" className="py-16 px-4">
+        <div className="container mx-auto">
+          <div className="text-center mb-12 animate-fade-in">
+            <Badge className="mb-4">Наши успехи</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Галерея моментов</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Фотографии с занятий, достижения детей и радостные моменты обучения
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '100ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/ffc83f06-7eee-44dd-babb-85bbb06b4496.png', title: 'Индивидуальное занятие' })}>
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/files/ffc83f06-7eee-44dd-babb-85bbb06b4496.png"
+                  alt="Индивидуальное занятие"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <p className="text-white font-medium">Индивидуальное занятие</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '200ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/ac917d4f-8fec-4a64-a984-20208037fed0.png', title: 'Групповые занятия' })}>
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/files/ac917d4f-8fec-4a64-a984-20208037fed0.png"
+                  alt="Групповые занятия"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <p className="text-white font-medium">Групповые занятия</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '300ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/82aa36bd-ce65-478a-84ca-9f23e7dfec93.jpg', title: 'Мелкая моторика' })}>
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/82aa36bd-ce65-478a-84ca-9f23e7dfec93.jpg"
+                  alt="Мелкая моторика"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <p className="text-white font-medium">Мелкая моторика</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '400ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/d28ee28f-aaf2-48a7-9b42-7f38b8c0ba8f.jpg', title: 'Артикуляционная гимнастика' })}>
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/d28ee28f-aaf2-48a7-9b42-7f38b8c0ba8f.jpg"
+                  alt="Артикуляционная гимнастика"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <p className="text-white font-medium">Артикуляционная гимнастика</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '500ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/23b95f91-d8e5-4bcb-9be8-dffafcb17fa1.jpg', title: 'Логоритмика' })}>
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/23b95f91-d8e5-4bcb-9be8-dffafcb17fa1.jpg"
+                  alt="Логоритмика"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <p className="text-white font-medium">Логоритмика</p>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 animate-fade-in"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-5xl w-full">
+            <Button 
+              variant="ghost" 
+              size="icon"
+              className="absolute -top-12 right-0 text-white hover:bg-white/20"
+              onClick={() => setSelectedImage(null)}
+            >
+              <Icon name="X" size={24} />
+            </Button>
+            <img 
+              src={selectedImage.url} 
+              alt={selectedImage.title}
+              className="w-full h-auto rounded-lg shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <p className="text-white text-center mt-4 text-lg font-medium">{selectedImage.title}</p>
+          </div>
+        </div>
+      )}
 
       <section id="материалы" className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
@@ -315,7 +500,77 @@ export default function Index() {
         </div>
       </section>
 
-      <ContactSection />
+      <section id="контакты" className="py-16 px-4 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12 animate-fade-in">
+            <Badge className="mb-4">Контакты</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Свяжитесь со мной</h2>
+            <p className="text-lg text-muted-foreground">
+              Готова ответить на все ваши вопросы и записать на консультацию
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="hover:shadow-lg transition-shadow animate-slide-up">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="Phone" size={24} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Телефон</h3>
+                    <a href="tel:+79169604222" className="text-primary hover:underline">+7 916 960-42-22</a>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow animate-slide-up" style={{ animationDelay: '100ms' }}>
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="Mail" size={24} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Email</h3>
+                    <a href="mailto:lesnik@mail.ru" className="text-primary hover:underline break-all">lesnik@mail.ru</a>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow animate-slide-up" style={{ animationDelay: '200ms' }}>
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="MapPin" size={24} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Адрес</h3>
+                    <p className="text-muted-foreground">МАДОУ детский сад "Звездочка"</p>
+                    <p className="text-sm text-muted-foreground mt-1">142172, Московская область</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow animate-slide-up" style={{ animationDelay: '300ms' }}>
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="Clock" size={24} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Режим работы</h3>
+                    <p className="text-muted-foreground">Пн-Пт: 9:00 - 17:00</p>
+                    <p className="text-sm text-muted-foreground mt-1">Запись по предварительной договоренности</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
 
       <footer className="bg-muted/50 py-8 px-4">
         <div className="container mx-auto text-center text-muted-foreground">
