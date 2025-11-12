@@ -133,11 +133,13 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
                   <div className="flex-1">
                     <CardTitle className="mb-2">Артикуляционная гимнастика</CardTitle>
                     <CardDescription className="mb-4">
-                      Комплекс упражнений для развития речевого аппарата. 12 страниц с иллюстрациями.
+                      Комплекс упражнений для развития речевого аппарата.
                     </CardDescription>
-                    <Button variant="outline" className="gap-2" onClick={() => handleDownload('articulation', 'Артикуляционная гимнастика')}>
-                      <Icon name="Download" size={16} />
-                      Скачать PDF
+                    <Button variant="outline" className="gap-2" asChild>
+                      <a href="https://disk.yandex.ru/i/6xuKhLWwu8Ez5g" target="_blank" rel="noopener noreferrer">
+                        <Icon name="Download" size={16} />
+                        Открыть файл
+                      </a>
                     </Button>
                   </div>
                 </div>
