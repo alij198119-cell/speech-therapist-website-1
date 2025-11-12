@@ -229,10 +229,26 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
                     <CardDescription className="mb-4">
                       Упражнения для развития речевого дыхания с пошаговыми инструкциями.
                     </CardDescription>
-                    <Button variant="outline" className="gap-2" onClick={() => handleDownload('breathing', 'Дыхательная гимнастика')}>
-                      <Icon name="Download" size={16} />
-                      Скачать PDF
-                    </Button>
+                    <div className="space-y-2">
+                      <Button variant="outline" className="gap-2 w-full justify-start text-sm" asChild>
+                        <a href="https://disk.yandex.ru/i/iFHcxA9wL6XlAA" target="_blank" rel="noopener noreferrer">
+                          <Icon name="Download" size={16} />
+                          Материал 1
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="gap-2 w-full justify-start text-sm" asChild>
+                        <a href="https://disk.yandex.ru/i/ylRsDvvijpj6Xw" target="_blank" rel="noopener noreferrer">
+                          <Icon name="Download" size={16} />
+                          Материал 2
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="gap-2 w-full justify-start text-sm" asChild>
+                        <a href="https://disk.yandex.ru/i/4Nyh2zf6UJdRvw" target="_blank" rel="noopener noreferrer">
+                          <Icon name="Download" size={16} />
+                          Материал 3
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </CardHeader>
