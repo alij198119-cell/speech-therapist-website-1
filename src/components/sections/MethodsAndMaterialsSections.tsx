@@ -193,12 +193,26 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
                     <CardDescription className="mb-4">
                       Подборка для автоматизации всех звуков русского языка.
                     </CardDescription>
-                    <Button variant="outline" className="gap-2" asChild>
-                      <a href="https://disk.yandex.ru/i/veAJXTV_3Nt8sg" target="_blank" rel="noopener noreferrer">
-                        <Icon name="Download" size={16} />
-                        Скачать
-                      </a>
-                    </Button>
+                    <div className="space-y-2">
+                      <Button variant="outline" className="gap-2 w-full justify-start text-sm" asChild>
+                        <a href="https://disk.yandex.ru/i/tyBZcO_Tlu8n4Q" target="_blank" rel="noopener noreferrer">
+                          <Icon name="Download" size={16} />
+                          Материал 1
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="gap-2 w-full justify-start text-sm" asChild>
+                        <a href="https://disk.yandex.ru/i/ixb-01JZSxnMCQ" target="_blank" rel="noopener noreferrer">
+                          <Icon name="Download" size={16} />
+                          Материал 2
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="gap-2 w-full justify-start text-sm" asChild>
+                        <a href="https://disk.yandex.ru/i/eb9SudmhLkQKnQ" target="_blank" rel="noopener noreferrer">
+                          <Icon name="Download" size={16} />
+                          Материал 3
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </CardHeader>
