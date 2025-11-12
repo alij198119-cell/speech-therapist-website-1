@@ -155,11 +155,13 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
                   <div className="flex-1">
                     <CardTitle className="mb-2">Логопедические игры</CardTitle>
                     <CardDescription className="mb-4">
-                      30+ игр для развития речи детей 3-7 лет. Можно играть всей семьей.
+                      Игры для развития речи детей.
                     </CardDescription>
-                    <Button variant="outline" className="gap-2" onClick={() => handleDownload('games', 'Логопедические игры')}>
-                      <Icon name="Download" size={16} />
-                      Скачать PDF
+                    <Button variant="outline" className="gap-2" asChild>
+                      <a href="https://disk.yandex.ru/i/uMDyWrbOYEs7ag" target="_blank" rel="noopener noreferrer">
+                        <Icon name="Download" size={16} />
+                        Открыть файл
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -177,9 +179,11 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
                     <CardDescription className="mb-4">
                       Подборка для автоматизации всех звуков русского языка.
                     </CardDescription>
-                    <Button variant="outline" className="gap-2" onClick={() => handleDownload('tongue-twisters', 'Чистоговорки и скороговорки')}>
-                      <Icon name="Download" size={16} />
-                      Скачать PDF
+                    <Button variant="outline" className="gap-2" asChild>
+                      <a href="https://disk.yandex.ru/i/veAJXTV_3Nt8sg" target="_blank" rel="noopener noreferrer">
+                        <Icon name="Download" size={16} />
+                        Открыть файл
+                      </a>
                     </Button>
                   </div>
                 </div>
