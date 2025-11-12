@@ -11,9 +11,10 @@ import {
 
 interface HeroAndAboutSectionsProps {
   scrollToSection: (sectionId: string) => void;
+  showAboutSection: boolean;
 }
 
-export default function HeroAndAboutSections({ scrollToSection }: HeroAndAboutSectionsProps) {
+export default function HeroAndAboutSections({ scrollToSection, showAboutSection }: HeroAndAboutSectionsProps) {
   const [selectedImages, setSelectedImages] = useState<string[] | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -58,8 +59,10 @@ export default function HeroAndAboutSections({ scrollToSection }: HeroAndAboutSe
         </div>
       </section>
 
-      <section id="о логопеде" className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
+      {showAboutSection && (
+        <>
+          <section id="о логопеде" className="py-16 px-4">
+            <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in order-2 md:order-1">
               <Badge className="mb-4">О логопеде</Badge>
@@ -260,6 +263,8 @@ export default function HeroAndAboutSections({ scrollToSection }: HeroAndAboutSe
           </div>
         </DialogContent>
       </Dialog>
+        </>
+      )}
     </>
   );
 }

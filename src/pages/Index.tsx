@@ -10,6 +10,7 @@ const BACKEND_URL = 'https://functions.poehali.dev/4a75476f-857b-4505-813c-ced54
 
 export default function Index() {
   const [activeSection, setActiveSection] = useState('home');
+  const [showAboutSection, setShowAboutSection] = useState(false);
 
   const handleDownload = async (materialId: string, materialName: string) => {
     try {
@@ -36,6 +37,9 @@ export default function Index() {
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
+    if (sectionId === 'о логопеде') {
+      setShowAboutSection(true);
+    }
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -68,7 +72,7 @@ export default function Index() {
         </div>
       </nav>
 
-      <HeroAndAboutSections scrollToSection={scrollToSection} />
+      <HeroAndAboutSections scrollToSection={scrollToSection} showAboutSection={showAboutSection} />
 
       <MethodsAndMaterialsSections handleDownload={handleDownload} />
 
