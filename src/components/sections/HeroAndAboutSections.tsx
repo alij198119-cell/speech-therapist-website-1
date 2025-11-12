@@ -64,7 +64,10 @@ export default function HeroAndAboutSections({ scrollToSection }: HeroAndAboutSe
             <div className="animate-fade-in order-2 md:order-1">
               <Badge className="mb-4">О логопеде</Badge>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Евсеева Елена Сергеевна</h2>
-              <p className="text-lg text-muted-foreground mb-4">Учитель-логопед </p>
+              <p className="text-lg text-muted-foreground mb-4">
+                Учитель-логопед с многолетним опытом работы в дошкольном образовательном учреждении. 
+                Помогаю детям преодолевать речевые трудности и развивать коммуникативные навыки.
+              </p>
               <div className="space-y-4 mb-6">
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
@@ -72,7 +75,7 @@ export default function HeroAndAboutSections({ scrollToSection }: HeroAndAboutSe
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Образование</h4>
-                    <p className="text-muted-foreground">Высшее психолого-педагогическое образование</p>
+                    <p className="text-muted-foreground">Московский финансово-промышленный университет «Синергия», специальность «Психолого-педагогическое образование»</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -80,8 +83,8 @@ export default function HeroAndAboutSections({ scrollToSection }: HeroAndAboutSe
                     <Icon name="Award" size={20} className="text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1"></h4>
-                    <p className="text-muted-foreground"></p>
+                    <h4 className="font-semibold mb-1">Квалификация</h4>
+                    <p className="text-muted-foreground">Дефектология, логопедия, специальное (дефектологическое) образование. Регулярное повышение квалификации по современным методикам коррекции речи</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -89,8 +92,8 @@ export default function HeroAndAboutSections({ scrollToSection }: HeroAndAboutSe
                     <Icon name="Star" size={20} className="text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1"></h4>
-                    <p className="text-muted-foreground"></p>
+                    <h4 className="font-semibold mb-1">Специализация</h4>
+                    <p className="text-muted-foreground">Коррекция звукопроизношения, развитие фонематического слуха, работа с детьми с расстройствами аутистического спектра, подготовка к школе</p>
                   </div>
                 </div>
               </div>
