@@ -176,65 +176,7 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
               </CardHeader>
             </Card>
 
-            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-slide-up" style={{ animationDelay: '300ms' }}>
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
-                    <Icon name="Pencil" size={28} />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="mb-2">Рабочие тетради</CardTitle>
-                    <CardDescription className="mb-4">
-                      Задания для развития фонематического слуха и мелкой моторики.
-                    </CardDescription>
-                    <Button variant="outline" className="gap-2" onClick={() => handleDownload('workbooks', 'Рабочие тетради')}>
-                      <Icon name="Download" size={16} />
-                      Скачать PDF
-                    </Button>
-                  </div>
-                </div>
-              </CardHeader>
-            </Card>
 
-            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-slide-up" style={{ animationDelay: '400ms' }}>
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center flex-shrink-0">
-                    <Icon name="Wind" size={28} />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="mb-2">Дыхательная гимнастика</CardTitle>
-                    <CardDescription className="mb-4">
-                      Упражнения для развития речевого дыхания с пошаговыми инструкциями.
-                    </CardDescription>
-                    <Button variant="outline" className="gap-2" onClick={() => handleDownload('breathing', 'Дыхательная гимнастика')}>
-                      <Icon name="Download" size={16} />
-                      Скачать PDF
-                    </Button>
-                  </div>
-                </div>
-              </CardHeader>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-slide-up" style={{ animationDelay: '500ms' }}>
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-accent/10 text-accent flex items-center justify-center flex-shrink-0">
-                    <Icon name="Video" size={28} />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="mb-2">Видеоуроки для родителей</CardTitle>
-                    <CardDescription className="mb-4">
-                      Как правильно заниматься с ребенком дома. 10 коротких видео.
-                    </CardDescription>
-                    <Button variant="outline" className="gap-2">
-                      <Icon name="ExternalLink" size={16} />
-                      Смотреть онлайн
-                    </Button>
-                  </div>
-                </div>
-              </CardHeader>
-            </Card>
           </div>
 
           <Card className="mt-8 bg-gradient-to-r from-primary to-secondary text-white animate-fade-in">
