@@ -19,7 +19,7 @@ export default function VideoSection() {
       url: 'https://youtu.be/z1ifl5WqGZI',
       title: 'Видео занятия - логопедическая работа',
       description: 'Фрагменты индивидуальных и групповых занятий с детьми',
-      thumbnail: 'https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/11558b4f-4a4a-4f27-88d0-72d6e9ab106d.jpg'
+      thumbnail: 'https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/d81b3fa5-2619-4d4d-948b-854973405f84.jpg'
     }
   ];
 
