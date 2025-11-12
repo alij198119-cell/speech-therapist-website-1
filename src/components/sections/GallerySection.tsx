@@ -190,7 +190,7 @@ export default function GallerySection() {
               <img 
                 src={selectedMedia.url} 
                 alt={selectedMedia.title}
-                className="w-full h-auto rounded-lg shadow-2xl"
+                className="w-full h-auto max-h-[85vh] object-contain rounded-lg shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
               />
             ) : (
@@ -198,11 +198,11 @@ export default function GallerySection() {
                 src={selectedMedia.url} 
                 controls
                 autoPlay
-                className="w-full h-auto rounded-lg shadow-2xl"
+                className="w-full h-auto max-h-[85vh] object-contain rounded-lg shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
               />
             )}
-            <p className="text-white text-center mt-4 text-lg font-medium">{selectedMedia.title}</p>
+            <p className="text-white text-center mt-4 text-lg font-medium drop-shadow-lg">{selectedMedia.title}</p>
           </div>
         </div>
       )}
