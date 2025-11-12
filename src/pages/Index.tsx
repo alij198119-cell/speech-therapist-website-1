@@ -16,18 +16,14 @@ export default function Index() {
       const response = await fetch(`${BACKEND_URL}?id=${materialId}`);
       
       if (response.ok) {
-        // Get PDF as blob
         const blob = await response.blob();
-        
-        // Create download link
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `${materialId}.pdf`;
+        a.download = `${materialName}.pdf`;
         document.body.appendChild(a);
         a.click();
         
-        // Cleanup
         window.URL.revokeObjectURL(url);
         document.body.removeChild(a);
       } else {
