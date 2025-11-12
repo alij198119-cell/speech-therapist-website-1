@@ -431,13 +431,6 @@ export default function Index() {
               </div>
             </Card>
           </div>
-
-          <div className="text-center">
-            <Button size="lg" variant="outline" className="gap-2">
-              <Icon name="Images" size={20} />
-              Посмотреть все фото
-            </Button>
-          </div>
         </div>
       </section>
 

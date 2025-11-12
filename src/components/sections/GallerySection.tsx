@@ -168,6 +168,32 @@ export default function GallerySection() {
                 </div>
               </div>
             </Card>
+
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '1200ms' }} onClick={() => setSelectedMedia({ url: 'https://cdn.poehali.dev/files/a7982f78-df5f-41fb-86c4-27e8fb38f5fe.jpg', title: 'Групповое занятие - игры с детьми', type: 'image' })}>
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/files/a7982f78-df5f-41fb-86c4-27e8fb38f5fe.jpg"
+                  alt="Групповое занятие - игры с детьми"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <p className="text-white font-medium">Групповое занятие - игры с детьми</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '1300ms' }} onClick={() => setSelectedMedia({ url: 'https://cdn.poehali.dev/files/bec3c562-2b38-42c6-9f24-c2c062126a36.jpg', title: 'Индивидуальное занятие - работа с пособиями', type: 'image' })}>
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/files/bec3c562-2b38-42c6-9f24-c2c062126a36.jpg"
+                  alt="Индивидуальное занятие - работа с пособиями"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <p className="text-white font-medium">Индивидуальное занятие - работа с пособиями</p>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
