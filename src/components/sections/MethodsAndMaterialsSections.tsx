@@ -81,7 +81,7 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
 
           <div className="relative rounded-3xl overflow-hidden shadow-2xl animate-fade-in">
             <img
-              src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/a0617b9d-31ce-4a54-9d76-2bdca846c7dc.jpg"
+              src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/d75e3ab7-fb1d-4ad6-bdac-9fd675e73e83.jpg"
               alt="Методики работы"
               className="w-full h-[400px] object-cover"
             />
