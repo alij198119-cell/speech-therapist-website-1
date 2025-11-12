@@ -155,10 +155,6 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
                     <CardDescription className="mb-4">
                       30+ игр для развития речи детей 3-7 лет. Можно играть всей семьей.
                     </CardDescription>
-                    <Button variant="outline" className="gap-2" onClick={() => handleDownload('games', 'Логопедические игры')}>
-                      <Icon name="Download" size={16} />
-                      Скачать PDF
-                    </Button>
                   </div>
                 </div>
               </CardHeader>
@@ -175,10 +171,6 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
                     <CardDescription className="mb-4">
                       Подборка для автоматизации всех звуков русского языка.
                     </CardDescription>
-                    <Button variant="outline" className="gap-2" onClick={() => handleDownload('tongue-twisters', 'Чистоговорки и скороговорки')}>
-                      <Icon name="Download" size={16} />
-                      Скачать PDF
-                    </Button>
                   </div>
                 </div>
               </CardHeader>
