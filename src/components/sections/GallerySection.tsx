@@ -29,8 +29,7 @@ export default function GallerySection() {
   const groupItems: MediaItem[] = [
     { url: 'https://cdn.poehali.dev/files/fd50e6a0-e21b-4087-9565-ec1473dc88cd.png', title: 'Групповое занятие - дыхательная гимнастика', type: 'image' },
     { url: 'https://cdn.poehali.dev/files/4647050d-6685-43d2-8c04-7f78f389df1b.png', title: 'Групповое занятие - творческие задания', type: 'image' },
-    { url: 'https://cdn.poehali.dev/files/39275cd4-7300-455a-935e-552137b922d3.png', title: 'Групповое занятие - дыхательные упражнения', type: 'image' },
-    { url: 'https://cdn.poehali.dev/files/a7982f78-df5f-41fb-86c4-27e8fb38f5fe.jpg', title: 'Групповое занятие - игры с детьми', type: 'image' }
+    { url: 'https://cdn.poehali.dev/files/39275cd4-7300-455a-935e-552137b922d3.png', title: 'Групповое занятие - дыхательные упражнения', type: 'image' }
   ];
 
   const allItems = currentCategory === 'individual' ? individualItems : groupItems;
