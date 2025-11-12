@@ -116,7 +116,7 @@ export default function Index() {
               <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
                 <span className="text-2xl">🗣️</span>
               </div>
-              <span className="font-bold text-xl text-foreground">Логопедия в ДОУ</span>
+              <span className="font-bold text-xl text-foreground">Логопед в ДОУ №16 рп. Лесогорск</span>
             </div>
             <div className="hidden md:flex gap-6">
               {['Главная', 'О логопеде', 'Методики', 'Галерея', 'Видео', 'Материалы', 'Расписание', 'Родителям', 'Контакты'].map((item) => (
@@ -698,7 +698,7 @@ export default function Index() {
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
               <span className="text-xl">🗣️</span>
             </div>
-            <span className="font-semibold text-foreground">Логопедия в ДОУ</span>
+            <span className="font-semibold text-foreground">Логопед в ДОУ №16 рп. Лесогорск</span>
           </div>
           <p className="text-sm">
             © 2024 Все права защищены. Помогаем детям говорить правильно и красиво.
