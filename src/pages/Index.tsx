@@ -701,7 +701,7 @@ export default function Index() {
             <span className="font-semibold text-foreground">Логопед в ДОУ №16 рп. Лесогорск</span>
           </div>
           <p className="text-sm">
-            © 2024 Все права защищены. Помогаем детям говорить правильно и красиво.
+            © 2025 Евсеева Е.С. Помогаем детям говорить правильно и красиво.
           </p>
         </div>
       </footer>
