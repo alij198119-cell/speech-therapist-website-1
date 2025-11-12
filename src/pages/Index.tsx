@@ -4,12 +4,12 @@ import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import GallerySection from '@/components/sections/GallerySection';
 
 const BACKEND_URL = 'https://functions.poehali.dev/4a75476f-857b-4505-813c-ced5409e0204';
 
 export default function Index() {
   const [activeSection, setActiveSection] = useState('home');
-  const [selectedImage, setSelectedImage] = useState<{ url: string; title: string } | null>(null);
 
   const handleDownload = async (materialId: string, materialName: string) => {
     try {
@@ -339,100 +339,7 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="успехи" className="py-16 px-4">
-        <div className="container mx-auto">
-          <div className="text-center mb-12 animate-fade-in">
-            <Badge className="mb-4">Фото и видео</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Галерея
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Наши занятия, мероприятия и будни в детском саду
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/770c23a4-9cce-4911-9a8d-bb25c302aaf8.jpg', title: 'Кабинет логопеда' })}>
-              <div className="relative h-72 overflow-hidden">
-                <img
-                  src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/770c23a4-9cce-4911-9a8d-bb25c302aaf8.jpg"
-                  alt="Кабинет логопеда"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <p className="text-white font-medium">Кабинет логопеда</p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '100ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/ffc83f06-7eee-44dd-babb-85bbb06b4496.png', title: 'Индивидуальное занятие' })}>
-              <div className="relative h-72 overflow-hidden">
-                <img
-                  src="https://cdn.poehali.dev/files/ffc83f06-7eee-44dd-babb-85bbb06b4496.png"
-                  alt="Индивидуальное занятие"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <p className="text-white font-medium">Индивидуальное занятие</p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '200ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/files/ac917d4f-8fec-4a64-a984-20208037fed0.png', title: 'Групповые занятия' })}>
-              <div className="relative h-72 overflow-hidden">
-                <img
-                  src="https://cdn.poehali.dev/files/ac917d4f-8fec-4a64-a984-20208037fed0.png"
-                  alt="Групповые занятия"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <p className="text-white font-medium">Групповые занятия</p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '300ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/81c3e6c6-8c5c-4be6-a0c7-c6d9b20d10e4.jpg', title: 'Успехи наших детей' })}>
-              <div className="relative h-72 overflow-hidden">
-                <img
-                  src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/81c3e6c6-8c5c-4be6-a0c7-c6d9b20d10e4.jpg"
-                  alt="Успехи детей"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <p className="text-white font-medium">Успехи наших детей</p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" style={{ animationDelay: '400ms' }} onClick={() => setSelectedImage({ url: 'https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/7c66309a-8703-4a04-abc9-28e4db339271.jpg', title: 'Дидактические материалы' })}>
-              <div className="relative h-72 overflow-hidden">
-                <img
-                  src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/7c66309a-8703-4a04-abc9-28e4db339271.jpg"
-                  alt="Логопедические материалы"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <p className="text-white font-medium">Дидактические материалы</p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group bg-gradient-to-br from-primary/10 to-secondary/10" style={{ animationDelay: '500ms' }}>
-              <div className="relative h-72 flex flex-col items-center justify-center p-8 text-center">
-                <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Icon name="Video" size={40} className="text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-2">Видео занятий</h3>
-                <p className="text-muted-foreground mb-4">Посмотрите, как проходят наши занятия</p>
-                <Button variant="outline" className="gap-2">
-                  <Icon name="Play" size={16} />
-                  Смотреть видео
-                </Button>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <GallerySection />
 
       <section id="материалы" className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto max-w-5xl">
