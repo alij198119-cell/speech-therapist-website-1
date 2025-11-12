@@ -693,30 +693,6 @@ export default function Index() {
         </div>
       </section>
 
-      {selectedImage && (
-        <div 
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 animate-fade-in"
-          onClick={() => setSelectedImage(null)}
-        >
-          <button
-            className="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-            onClick={() => setSelectedImage(null)}
-          >
-            <Icon name="X" size={24} className="text-white" />
-          </button>
-          
-          <div className="max-w-6xl w-full max-h-[90vh] flex flex-col items-center">
-            <img
-              src={selectedImage.url}
-              alt={selectedImage.title}
-              className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            />
-            <p className="text-white text-xl font-medium mt-6">{selectedImage.title}</p>
-          </div>
-        </div>
-      )}
-
       <footer className="py-8 px-4 border-t bg-muted/20">
         <div className="container mx-auto text-center text-muted-foreground">
           <div className="flex items-center justify-center gap-2 mb-4">
