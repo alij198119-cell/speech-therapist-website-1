@@ -46,7 +46,7 @@ export default function GallerySection() {
 
   return (
     <>
-      <section id="успехи" className="py-16 px-4">
+      <section id="галерея" className="py-16 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-12 animate-fade-in">
             <Badge className="mb-4">Наши успехи</Badge>

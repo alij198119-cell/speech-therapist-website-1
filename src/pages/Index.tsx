@@ -119,7 +119,7 @@ export default function Index() {
               <span className="font-bold text-xl text-foreground">Логопедия в ДОУ</span>
             </div>
             <div className="hidden md:flex gap-6">
-              {['Главная', 'О логопеде', 'Методики', 'Успехи', 'Материалы', 'Расписание', 'Родителям', 'Контакты'].map((item) => (
+              {['Главная', 'О логопеде', 'Методики', 'Галерея', 'Видео', 'Материалы', 'Расписание', 'Родителям', 'Контакты'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
