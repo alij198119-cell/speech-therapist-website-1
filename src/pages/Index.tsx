@@ -5,6 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 import GallerySection from '@/components/sections/GallerySection';
+import VideoSection from '@/components/sections/VideoSection';
 
 const BACKEND_URL = 'https://functions.poehali.dev/4a75476f-857b-4505-813c-ced5409e0204';
 
@@ -336,6 +337,8 @@ export default function Index() {
       </section>
 
       <GallerySection />
+
+      <VideoSection />
 
       <section id="материалы" className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto max-w-5xl">

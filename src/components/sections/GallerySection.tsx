@@ -21,7 +21,6 @@ export default function GallerySection() {
     { url: 'https://cdn.poehali.dev/files/72ef95cb-50a8-49df-ad6b-0480d5d9017b.jpg', title: 'Индивидуальное занятие - мелкая моторика', type: 'image' },
     { url: 'https://cdn.poehali.dev/files/fd50e6a0-e21b-4087-9565-ec1473dc88cd.png', title: 'Групповое занятие - дыхательная гимнастика', type: 'image' },
     { url: 'https://cdn.poehali.dev/files/4647050d-6685-43d2-8c04-7f78f389df1b.png', title: 'Групповое занятие - творческие задания', type: 'image' },
-    { url: 'https://youtu.be/z1ifl5WqGZI', title: 'Видео занятия - логопедическая работа', type: 'video', thumbnail: 'https://cdn.poehali.dev/files/fd50e6a0-e21b-4087-9565-ec1473dc88cd.png' },
     { url: 'https://cdn.poehali.dev/files/39275cd4-7300-455a-935e-552137b922d3.png', title: 'Групповое занятие - дыхательные упражнения', type: 'image' },
     { url: 'https://cdn.poehali.dev/files/641ea729-6c8b-4ffd-961f-beef9e54799b.png', title: 'Индивидуальное занятие - творческие задания', type: 'image' },
     { url: 'https://cdn.poehali.dev/files/0e3d339d-97e7-467e-8912-541928fcdb43.png', title: 'Индивидуальное занятие - звукопроизношение', type: 'image' },
@@ -53,7 +52,7 @@ export default function GallerySection() {
             <Badge className="mb-4">Наши успехи</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Галерея моментов</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Фотографии и видео с занятий, достижения детей и радостные моменты обучения
+              Фотографии с занятий, достижения детей и радостные моменты обучения
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -61,30 +60,15 @@ export default function GallerySection() {
               <Card 
                 key={item.url}
                 className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" 
-                style={{ animationDelay: `${(index + 1) * 100}ms` }} 
+                style={{ animationDelay: `${index * 100}ms` }} 
                 onClick={() => setSelectedMedia(item)}
               >
                 <div className="relative h-72 overflow-hidden">
-                  {item.type === 'video' ? (
-                    <>
-                      <img
-                        src={item.thumbnail || item.url}
-                        alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                        <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform">
-                          <Icon name="Play" size={32} className="text-primary ml-1" />
-                        </div>
-                      </div>
-                    </>
-                  ) : (
-                    <img
-                      src={item.url}
-                      alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                  )}
+                  <img
+                    src={item.url}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <p className="text-white font-medium">{item.title}</p>
                   </div>
@@ -141,27 +125,12 @@ export default function GallerySection() {
               </Button>
             )}
 
-            {selectedMedia.type === 'image' ? (
-              <img 
-                src={selectedMedia.url} 
-                alt={selectedMedia.title}
-                className="w-full h-auto max-h-[85vh] object-contain rounded-lg shadow-2xl"
-                onClick={(e) => e.stopPropagation()}
-              />
-            ) : (
-              <div className="w-full aspect-video max-h-[85vh] rounded-lg overflow-hidden shadow-2xl" onClick={(e) => e.stopPropagation()}>
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src={`https://www.youtube.com/embed/${selectedMedia.url.split('/').pop()}`}
-                  title={selectedMedia.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
-              </div>
-            )}
+            <img 
+              src={selectedMedia.url} 
+              alt={selectedMedia.title}
+              className="w-full h-auto max-h-[85vh] object-contain rounded-lg shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
             <p className="text-white text-center mt-4 text-lg font-medium drop-shadow-lg">
               {selectedMedia.title} ({currentIndex + 1} / {mediaItems.length})
             </p>
