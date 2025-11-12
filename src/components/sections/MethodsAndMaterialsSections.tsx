@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
 import Icon from '@/components/ui/icon';
 
 interface MethodsAndMaterialsSectionsProps {
@@ -8,6 +10,20 @@ interface MethodsAndMaterialsSectionsProps {
 }
 
 export default function MethodsAndMaterialsSections({ handleDownload }: MethodsAndMaterialsSectionsProps) {
+  const [email, setEmail] = useState('');
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubscribe = () => {
+    if (email && email.includes('@')) {
+      setIsSubscribed(true);
+      setTimeout(() => {
+        setIsSubscribed(false);
+        setEmail('');
+      }, 3000);
+    } else {
+      alert('Пожалуйста, введите корректный email');
+    }
+  };
   const methods = [
     {
       title: 'Артикуляционная гимнастика',
@@ -237,14 +253,37 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <h3 className="text-2xl font-bold mb-2">Получайте новые материалы первыми</h3>
-                  <p className="text-white/90">
+                  <p className="text-white/90 mb-4">
                     Регулярно добавляю новые пособия и упражнения. Следите за обновлениями!
                   </p>
+                  {!isSubscribed && (
+                    <div className="flex gap-2 max-w-md mx-auto md:mx-0">
+                      <Input
+                        type="email"
+                        placeholder="Введите ваш email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="bg-white text-foreground"
+                        onKeyDown={(e) => e.key === 'Enter' && handleSubscribe()}
+                      />
+                      <Button 
+                        size="lg" 
+                        variant="secondary" 
+                        className="gap-2 flex-shrink-0"
+                        onClick={handleSubscribe}
+                      >
+                        <Icon name="Mail" size={20} />
+                        Подписаться
+                      </Button>
+                    </div>
+                  )}
+                  {isSubscribed && (
+                    <div className="flex items-center gap-2 justify-center md:justify-start text-white">
+                      <Icon name="CheckCircle" size={24} />
+                      <span className="font-semibold">Спасибо! Вы подписаны на обновления</span>
+                    </div>
+                  )}
                 </div>
-                <Button size="lg" variant="secondary" className="gap-2 flex-shrink-0">
-                  <Icon name="Mail" size={20} />
-                  Подписаться
-                </Button>
               </div>
             </CardContent>
           </Card>
