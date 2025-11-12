@@ -135,56 +135,26 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
                     <CardDescription className="mb-4">
                       Комплекс упражнений для развития речевого аппарата.
                     </CardDescription>
-                    <Button variant="outline" className="gap-2" asChild>
-                      <a href="https://disk.yandex.ru/i/6xuKhLWwu8Ez5g" target="_blank" rel="noopener noreferrer">
-                        <Icon name="Download" size={16} />
-                        Открыть файл
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-              </CardHeader>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-slide-up" style={{ animationDelay: '100ms' }}>
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center flex-shrink-0">
-                    <Icon name="BookOpen" size={28} />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="mb-2">Логопедические игры</CardTitle>
-                    <CardDescription className="mb-4">
-                      Игры для развития речи детей.
-                    </CardDescription>
-                    <Button variant="outline" className="gap-2" asChild>
-                      <a href="https://disk.yandex.ru/i/uMDyWrbOYEs7ag" target="_blank" rel="noopener noreferrer">
-                        <Icon name="Download" size={16} />
-                        Открыть файл
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-              </CardHeader>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-slide-up" style={{ animationDelay: '200ms' }}>
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-accent/10 text-accent flex items-center justify-center flex-shrink-0">
-                    <Icon name="Music" size={28} />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="mb-2">Чистоговорки и скороговорки</CardTitle>
-                    <CardDescription className="mb-4">
-                      Подборка для автоматизации всех звуков русского языка.
-                    </CardDescription>
-                    <Button variant="outline" className="gap-2" asChild>
-                      <a href="https://disk.yandex.ru/i/veAJXTV_3Nt8sg" target="_blank" rel="noopener noreferrer">
-                        <Icon name="Download" size={16} />
-                        Открыть файл
-                      </a>
-                    </Button>
+                    <div className="space-y-2">
+                      <Button variant="outline" className="gap-2 w-full" asChild>
+                        <a href="https://disk.yandex.ru/i/6xuKhLWwu8Ez5g" target="_blank" rel="noopener noreferrer">
+                          <Icon name="Download" size={16} />
+                          Артикуляционная гимнастика
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="gap-2 w-full" asChild>
+                        <a href="https://disk.yandex.ru/i/uMDyWrbOYEs7ag" target="_blank" rel="noopener noreferrer">
+                          <Icon name="Download" size={16} />
+                          Логопедические игры
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="gap-2 w-full" asChild>
+                        <a href="https://disk.yandex.ru/i/veAJXTV_3Nt8sg" target="_blank" rel="noopener noreferrer">
+                          <Icon name="Download" size={16} />
+                          Чистоговорки и скороговорки
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </CardHeader>
