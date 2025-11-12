@@ -133,28 +133,12 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
                   <div className="flex-1">
                     <CardTitle className="mb-2">Артикуляционная гимнастика</CardTitle>
                     <CardDescription className="mb-4">
-                      Комплекс упражнений для развития речевого аппарата.
+                      Комплекс упражнений для развития речевого аппарата. 12 страниц с иллюстрациями.
                     </CardDescription>
-                    <div className="space-y-2">
-                      <Button variant="outline" className="gap-2 w-full justify-start text-sm" asChild>
-                        <a href="https://disk.yandex.ru/i/6xuKhLWwu8Ez5g" target="_blank" rel="noopener noreferrer">
-                          <Icon name="Download" size={16} />
-                          Артикуляционная гимнастика
-                        </a>
-                      </Button>
-                      <Button variant="outline" className="gap-2 w-full justify-start text-sm" asChild>
-                        <a href="https://disk.yandex.ru/i/uMDyWrbOYEs7ag" target="_blank" rel="noopener noreferrer">
-                          <Icon name="Download" size={16} />
-                          Логопедические игры
-                        </a>
-                      </Button>
-                      <Button variant="outline" className="gap-2 w-full justify-start text-sm" asChild>
-                        <a href="https://disk.yandex.ru/i/veAJXTV_3Nt8sg" target="_blank" rel="noopener noreferrer">
-                          <Icon name="Download" size={16} />
-                          Чистоговорки и скороговорки
-                        </a>
-                      </Button>
-                    </div>
+                    <Button variant="outline" className="gap-2" onClick={() => handleDownload('articulation', 'Артикуляционная гимнастика')}>
+                      <Icon name="Download" size={16} />
+                      Скачать PDF
+                    </Button>
                   </div>
                 </div>
               </CardHeader>
@@ -169,8 +153,12 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
                   <div className="flex-1">
                     <CardTitle className="mb-2">Логопедические игры</CardTitle>
                     <CardDescription className="mb-4">
-                      Игры для развития речи детей.
+                      30+ игр для развития речи детей 3-7 лет. Можно играть всей семьей.
                     </CardDescription>
+                    <Button variant="outline" className="gap-2" onClick={() => handleDownload('games', 'Логопедические игры')}>
+                      <Icon name="Download" size={16} />
+                      Скачать PDF
+                    </Button>
                   </div>
                 </div>
               </CardHeader>
@@ -187,6 +175,10 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
                     <CardDescription className="mb-4">
                       Подборка для автоматизации всех звуков русского языка.
                     </CardDescription>
+                    <Button variant="outline" className="gap-2" onClick={() => handleDownload('tongue-twisters', 'Чистоговорки и скороговорки')}>
+                      <Icon name="Download" size={16} />
+                      Скачать PDF
+                    </Button>
                   </div>
                 </div>
               </CardHeader>
