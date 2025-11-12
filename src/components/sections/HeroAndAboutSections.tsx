@@ -124,7 +124,7 @@ export default function HeroAndAboutSections({ scrollToSection }: HeroAndAboutSe
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {[
               {
                 icon: 'Award',
@@ -145,13 +145,6 @@ export default function HeroAndAboutSections({ scrollToSection }: HeroAndAboutSe
                   'https://cdn.poehali.dev/files/0521f9bc-afe8-4a67-8470-cdc1c4d72836.png',
                   'https://cdn.poehali.dev/files/4824b4c3-8d0f-4253-9cc2-c8864e8dae61.png'
                 ]
-              },
-              {
-                icon: 'Medal',
-                title: 'Дополнительные сертификаты',
-                description: 'Участие в конференциях и семинарах',
-                delay: '200ms',
-                image: null
               }
             ].map((cert, index) => (
               <div 
