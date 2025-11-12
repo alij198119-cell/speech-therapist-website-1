@@ -135,26 +135,12 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
                     <CardDescription className="mb-4">
                       Комплекс упражнений для развития речевого аппарата.
                     </CardDescription>
-                    <div className="space-y-2">
-                      <Button variant="outline" className="gap-2 w-full justify-start" asChild>
-                        <a href="https://disk.yandex.ru/i/6xuKhLWwu8Ez5g" target="_blank" rel="noopener noreferrer">
-                          <Icon name="Download" size={16} />
-                          Артикуляционная гимнастика
-                        </a>
-                      </Button>
-                      <Button variant="outline" className="gap-2 w-full justify-start" asChild>
-                        <a href="https://disk.yandex.ru/i/uMDyWrbOYEs7ag" target="_blank" rel="noopener noreferrer">
-                          <Icon name="Download" size={16} />
-                          Логопедические игры
-                        </a>
-                      </Button>
-                      <Button variant="outline" className="gap-2 w-full justify-start" asChild>
-                        <a href="https://disk.yandex.ru/i/veAJXTV_3Nt8sg" target="_blank" rel="noopener noreferrer">
-                          <Icon name="Download" size={16} />
-                          Чистоговорки и скороговорки
-                        </a>
-                      </Button>
-                    </div>
+                    <Button variant="outline" className="gap-2" asChild>
+                      <a href="https://disk.yandex.ru/i/6xuKhLWwu8Ez5g" target="_blank" rel="noopener noreferrer">
+                        <Icon name="Download" size={16} />
+                        Открыть файл
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </CardHeader>
