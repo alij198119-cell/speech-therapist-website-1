@@ -65,7 +65,6 @@ export default function HeroAndAboutSections({ scrollToSection }: HeroAndAboutSe
               <Badge className="mb-4">О логопеде</Badge>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Евсеева Елена Сергеевна</h2>
               <p className="text-lg text-muted-foreground mb-4">
-                Учитель-логопед с многолетним опытом работы в дошкольном образовательном учреждении. 
                 Помогаю детям преодолевать речевые трудности и развивать коммуникативные навыки.
               </p>
               <div className="space-y-4 mb-6">
