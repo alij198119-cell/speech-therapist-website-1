@@ -13,34 +13,39 @@ type MediaItem = {
 
 export default function GallerySection() {
   const [selectedMedia, setSelectedMedia] = useState<MediaItem | null>(null);
+  const [currentCategory, setCurrentCategory] = useState<'individual' | 'group'>('individual');
 
-  const mediaItems: MediaItem[] = [
+  const individualItems: MediaItem[] = [
     { url: 'https://cdn.poehali.dev/files/2497718e-2dca-4265-b59a-0ab57939c111.jpg', title: 'Индивидуальное занятие - дыхательные упражнения', type: 'image' },
     { url: 'https://cdn.poehali.dev/files/17541b82-f7de-46f5-9d1f-1b836f4833a0.jpg', title: 'Индивидуальное занятие - артикуляция', type: 'image' },
     { url: 'https://cdn.poehali.dev/files/8fc18b8c-cfd1-4025-b61f-879dddb4f6f4.png', title: 'Индивидуальное занятие - постановка звуков', type: 'image' },
     { url: 'https://cdn.poehali.dev/files/72ef95cb-50a8-49df-ad6b-0480d5d9017b.jpg', title: 'Индивидуальное занятие - мелкая моторика', type: 'image' },
-    { url: 'https://cdn.poehali.dev/files/fd50e6a0-e21b-4087-9565-ec1473dc88cd.png', title: 'Групповое занятие - дыхательная гимнастика', type: 'image' },
-    { url: 'https://cdn.poehali.dev/files/4647050d-6685-43d2-8c04-7f78f389df1b.png', title: 'Групповое занятие - творческие задания', type: 'image' },
-    { url: 'https://cdn.poehali.dev/files/39275cd4-7300-455a-935e-552137b922d3.png', title: 'Групповое занятие - дыхательные упражнения', type: 'image' },
     { url: 'https://cdn.poehali.dev/files/641ea729-6c8b-4ffd-961f-beef9e54799b.png', title: 'Индивидуальное занятие - творческие задания', type: 'image' },
     { url: 'https://cdn.poehali.dev/files/0e3d339d-97e7-467e-8912-541928fcdb43.png', title: 'Индивидуальное занятие - звукопроизношение', type: 'image' },
     { url: 'https://cdn.poehali.dev/files/1f8048de-3c66-46ad-a0c1-7569cad33900.png', title: 'Индивидуальное занятие - артикуляционная моторика', type: 'image' },
     { url: 'https://cdn.poehali.dev/files/c689316a-87cf-4c83-818a-3860dc508433.png', title: 'Индивидуальное занятие - развитие речи', type: 'image' },
-    { url: 'https://cdn.poehali.dev/files/a7982f78-df5f-41fb-86c4-27e8fb38f5fe.jpg', title: 'Групповое занятие - игры с детьми', type: 'image' },
     { url: 'https://cdn.poehali.dev/files/bec3c562-2b38-42c6-9f24-c2c062126a36.jpg', title: 'Индивидуальное занятие - работа с пособиями', type: 'image' }
   ];
 
-  const currentIndex = selectedMedia ? mediaItems.findIndex(item => item.url === selectedMedia.url) : -1;
+  const groupItems: MediaItem[] = [
+    { url: 'https://cdn.poehali.dev/files/fd50e6a0-e21b-4087-9565-ec1473dc88cd.png', title: 'Групповое занятие - дыхательная гимнастика', type: 'image' },
+    { url: 'https://cdn.poehali.dev/files/4647050d-6685-43d2-8c04-7f78f389df1b.png', title: 'Групповое занятие - творческие задания', type: 'image' },
+    { url: 'https://cdn.poehali.dev/files/39275cd4-7300-455a-935e-552137b922d3.png', title: 'Групповое занятие - дыхательные упражнения', type: 'image' },
+    { url: 'https://cdn.poehali.dev/files/a7982f78-df5f-41fb-86c4-27e8fb38f5fe.jpg', title: 'Групповое занятие - игры с детьми', type: 'image' }
+  ];
+
+  const allItems = currentCategory === 'individual' ? individualItems : groupItems;
+  const currentIndex = selectedMedia ? allItems.findIndex(item => item.url === selectedMedia.url) : -1;
 
   const goToNext = () => {
-    if (currentIndex >= 0 && currentIndex < mediaItems.length - 1) {
-      setSelectedMedia(mediaItems[currentIndex + 1]);
+    if (currentIndex >= 0 && currentIndex < allItems.length - 1) {
+      setSelectedMedia(allItems[currentIndex + 1]);
     }
   };
 
   const goToPrev = () => {
     if (currentIndex > 0) {
-      setSelectedMedia(mediaItems[currentIndex - 1]);
+      setSelectedMedia(allItems[currentIndex - 1]);
     }
   };
 
@@ -55,8 +60,28 @@ export default function GallerySection() {
               Фотографии с занятий, достижения детей и радостные моменты обучения
             </p>
           </div>
+
+          <div className="flex justify-center gap-4 mb-8">
+            <Button
+              variant={currentCategory === 'individual' ? 'default' : 'outline'}
+              onClick={() => setCurrentCategory('individual')}
+              className="gap-2"
+            >
+              <Icon name="User" size={20} />
+              Индивидуальные занятия ({individualItems.length})
+            </Button>
+            <Button
+              variant={currentCategory === 'group' ? 'default' : 'outline'}
+              onClick={() => setCurrentCategory('group')}
+              className="gap-2"
+            >
+              <Icon name="Users" size={20} />
+              Групповые занятия ({groupItems.length})
+            </Button>
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {mediaItems.map((item, index) => (
+            {allItems.map((item, index) => (
               <Card 
                 key={item.url}
                 className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" 
@@ -111,7 +136,7 @@ export default function GallerySection() {
               </Button>
             )}
 
-            {currentIndex < mediaItems.length - 1 && (
+            {currentIndex < allItems.length - 1 && (
               <Button
                 variant="ghost"
                 size="icon"
@@ -132,7 +157,7 @@ export default function GallerySection() {
               onClick={(e) => e.stopPropagation()}
             />
             <p className="text-white text-center mt-4 text-lg font-medium drop-shadow-lg">
-              {selectedMedia.title} ({currentIndex + 1} / {mediaItems.length})
+              {selectedMedia.title} ({currentIndex + 1} / {allItems.length})
             </p>
           </div>
         </div>
