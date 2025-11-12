@@ -39,7 +39,7 @@ export default function HeroAndAboutSections({ scrollToSection }: HeroAndAboutSe
             <div className="relative animate-slide-up">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-3xl"></div>
               <img
-                src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/7c66309a-8703-4a04-abc9-28e4db339271.jpg"
+                src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/a90962b5-53df-41b9-8768-877ac152c4e7.jpg"
                 alt="Логопедия"
                 className="relative rounded-3xl shadow-2xl w-full"
               />
