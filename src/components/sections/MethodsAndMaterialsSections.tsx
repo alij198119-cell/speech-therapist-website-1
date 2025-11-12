@@ -171,12 +171,26 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
                     <CardDescription className="mb-4">
                       30+ игр для развития речи детей 3-7 лет. Можно играть всей семьей.
                     </CardDescription>
-                    <Button variant="outline" className="gap-2" asChild>
-                      <a href="https://disk.yandex.ru/i/uMDyWrbOYEs7ag" target="_blank" rel="noopener noreferrer">
-                        <Icon name="Download" size={16} />
-                        Скачать
-                      </a>
-                    </Button>
+                    <div className="space-y-2">
+                      <Button variant="outline" className="gap-2 w-full justify-start text-sm" asChild>
+                        <a href="https://disk.yandex.ru/i/EPyGsKGy9Fq7KA" target="_blank" rel="noopener noreferrer">
+                          <Icon name="Download" size={16} />
+                          Материал 1
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="gap-2 w-full justify-start text-sm" asChild>
+                        <a href="https://disk.yandex.ru/i/tfzZHIOswmyj2g" target="_blank" rel="noopener noreferrer">
+                          <Icon name="Download" size={16} />
+                          Материал 2
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="gap-2 w-full justify-start text-sm" asChild>
+                        <a href="https://disk.yandex.ru/i/2bwlcN0Zr1w_mQ" target="_blank" rel="noopener noreferrer">
+                          <Icon name="Download" size={16} />
+                          Материал 3
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </CardHeader>
