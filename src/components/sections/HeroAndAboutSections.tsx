@@ -117,34 +117,51 @@ export default function HeroAndAboutSections({ scrollToSection }: HeroAndAboutSe
               {
                 icon: 'Award',
                 title: 'Диплом о высшем образовании',
-                description: 'Специальность "Педагогика и психология начального общего образования"',
-                delay: '0ms'
+                description: 'Московский финансово-промышленный университет «Синергия»',
+                delay: '0ms',
+                image: 'https://cdn.poehali.dev/files/de89d564-90a6-4dd8-8e0e-498c100a7528.jpg'
               },
               {
                 icon: 'FileCheck',
                 title: 'Сертификат повышения квалификации',
                 description: 'Современные методики коррекции речи',
-                delay: '100ms'
+                delay: '100ms',
+                image: null
               },
               {
                 icon: 'Medal',
                 title: 'Дополнительные сертификаты',
                 description: 'Участие в конференциях и семинарах',
-                delay: '200ms'
+                delay: '200ms',
+                image: null
               }
             ].map((cert, index) => (
               <div key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up group cursor-pointer bg-card rounded-lg border shadow-sm" style={{ animationDelay: cert.delay }}>
-                <div className="relative h-80 bg-gradient-to-br from-primary/5 to-secondary/5 flex flex-col items-center justify-center p-6">
-                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon name={cert.icon} size={40} className="text-primary" />
+                {cert.image ? (
+                  <div className="relative h-80">
+                    <img 
+                      src={cert.image} 
+                      alt={cert.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col items-center justify-end p-6 text-white">
+                      <h3 className="text-xl font-bold text-center mb-2">{cert.title}</h3>
+                      <p className="text-white/90 text-center text-sm">{cert.description}</p>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-center mb-2">{cert.title}</h3>
-                  <p className="text-muted-foreground text-center text-sm">{cert.description}</p>
-                  <Button variant="outline" className="mt-6 gap-2" size="sm">
-                    <Icon name="Plus" size={16} />
-                    Загрузить фото
-                  </Button>
-                </div>
+                ) : (
+                  <div className="relative h-80 bg-gradient-to-br from-primary/5 to-secondary/5 flex flex-col items-center justify-center p-6">
+                    <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <Icon name={cert.icon} size={40} className="text-primary" />
+                    </div>
+                    <h3 className="text-xl font-bold text-center mb-2">{cert.title}</h3>
+                    <p className="text-muted-foreground text-center text-sm">{cert.description}</p>
+                    <Button variant="outline" className="mt-6 gap-2" size="sm">
+                      <Icon name="Plus" size={16} />
+                      Загрузить фото
+                    </Button>
+                  </div>
+                )}
               </div>
             ))}
           </div>
