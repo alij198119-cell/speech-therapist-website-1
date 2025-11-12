@@ -74,7 +74,7 @@ export default function GallerySection() {
                   </div>
                 </div>
               </Card>
-            )}
+            ))}
           </div>
         </div>
       </section>
