@@ -1,12 +1,22 @@
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 interface HeroAndAboutSectionsProps {
   scrollToSection: (sectionId: string) => void;
 }
 
 export default function HeroAndAboutSections({ scrollToSection }: HeroAndAboutSectionsProps) {
+  const [selectedImages, setSelectedImages] = useState<string[] | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   return (
     <>
       <section id="главная" className="pt-24 pb-16 px-4">
@@ -123,10 +133,16 @@ export default function HeroAndAboutSections({ scrollToSection }: HeroAndAboutSe
               },
               {
                 icon: 'FileCheck',
-                title: 'Сертификат повышения квалификации',
-                description: 'Современные методики коррекции речи',
+                title: 'Сертификаты повышения квалификации',
+                description: 'Дефектология, логопедия, специальное образование',
                 delay: '100ms',
-                image: null
+                images: [
+                  'https://cdn.poehali.dev/files/96dda208-3827-40de-a780-8d00c0724e03.png',
+                  'https://cdn.poehali.dev/files/a660731e-a6c7-42d4-9b67-35fa0cb5a6b5.png',
+                  'https://cdn.poehali.dev/files/f8e7c2c0-8f59-45c3-99b8-9f86bbe84528.png',
+                  'https://cdn.poehali.dev/files/0521f9bc-afe8-4a67-8470-cdc1c4d72836.png',
+                  'https://cdn.poehali.dev/files/4824b4c3-8d0f-4253-9cc2-c8864e8dae61.png'
+                ]
               },
               {
                 icon: 'Medal',
@@ -136,8 +152,36 @@ export default function HeroAndAboutSections({ scrollToSection }: HeroAndAboutSe
                 image: null
               }
             ].map((cert, index) => (
-              <div key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up group cursor-pointer bg-card rounded-lg border shadow-sm" style={{ animationDelay: cert.delay }}>
-                {cert.image ? (
+              <div 
+                key={index} 
+                className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up group cursor-pointer bg-card rounded-lg border shadow-sm" 
+                style={{ animationDelay: cert.delay }}
+                onClick={() => {
+                  if ('images' in cert && cert.images) {
+                    setSelectedImages(cert.images);
+                    setCurrentImageIndex(0);
+                  } else if ('image' in cert && cert.image) {
+                    setSelectedImages([cert.image]);
+                    setCurrentImageIndex(0);
+                  }
+                }}
+              >
+                {'images' in cert && cert.images ? (
+                  <div className="relative h-80">
+                    <img 
+                      src={cert.images[0]} 
+                      alt={cert.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col items-center justify-end p-6 text-white">
+                      <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm">
+                        {cert.images.length} документов
+                      </div>
+                      <h3 className="text-xl font-bold text-center mb-2">{cert.title}</h3>
+                      <p className="text-white/90 text-center text-sm">{cert.description}</p>
+                    </div>
+                  </div>
+                ) : 'image' in cert && cert.image ? (
                   <div className="relative h-80">
                     <img 
                       src={cert.image} 
@@ -168,11 +212,59 @@ export default function HeroAndAboutSections({ scrollToSection }: HeroAndAboutSe
 
           <div className="mt-8 text-center">
             <p className="text-muted-foreground text-sm">
-              Нажмите на карточку, чтобы загрузить изображение вашего сертификата или диплома
+              Нажмите на карточку, чтобы посмотреть документы
             </p>
           </div>
         </div>
       </section>
+
+      <Dialog open={selectedImages !== null} onOpenChange={() => setSelectedImages(null)}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden">
+          <DialogHeader>
+            <DialogTitle>
+              {selectedImages && selectedImages.length > 1 
+                ? `Документ ${currentImageIndex + 1} из ${selectedImages.length}` 
+                : 'Документ'}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="relative">
+            {selectedImages && (
+              <>
+                <img 
+                  src={selectedImages[currentImageIndex]} 
+                  alt={`Документ ${currentImageIndex + 1}`}
+                  className="w-full h-auto max-h-[70vh] object-contain"
+                />
+                {selectedImages.length > 1 && (
+                  <div className="flex items-center justify-center gap-4 mt-4">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setCurrentImageIndex(prev => prev > 0 ? prev - 1 : selectedImages.length - 1)}
+                      disabled={selectedImages.length === 1}
+                    >
+                      <Icon name="ChevronLeft" size={20} />
+                      Предыдущий
+                    </Button>
+                    <span className="text-sm text-muted-foreground">
+                      {currentImageIndex + 1} / {selectedImages.length}
+                    </span>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setCurrentImageIndex(prev => prev < selectedImages.length - 1 ? prev + 1 : 0)}
+                      disabled={selectedImages.length === 1}
+                    >
+                      Следующий
+                      <Icon name="ChevronRight" size={20} />
+                    </Button>
+                  </div>
+                )}
+              </>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
