@@ -13,7 +13,7 @@ type MediaItem = {
 
 export default function GallerySection() {
   const [selectedMedia, setSelectedMedia] = useState<MediaItem | null>(null);
-  const [currentCategory, setCurrentCategory] = useState<'individual' | 'group'>('individual');
+  const [currentCategory, setCurrentCategory] = useState<'individual' | 'group' | null>(null);
 
   const individualItems: MediaItem[] = [
     { url: 'https://cdn.poehali.dev/files/2497718e-2dca-4265-b59a-0ab57939c111.jpg', title: 'Индивидуальное занятие - дыхательные упражнения', type: 'image' },
@@ -32,7 +32,7 @@ export default function GallerySection() {
     { url: 'https://cdn.poehali.dev/files/39275cd4-7300-455a-935e-552137b922d3.png', title: 'Групповое занятие - дыхательные упражнения', type: 'image' }
   ];
 
-  const allItems = currentCategory === 'individual' ? individualItems : groupItems;
+  const allItems = currentCategory === 'individual' ? individualItems : currentCategory === 'group' ? groupItems : [];
   const currentIndex = selectedMedia ? allItems.findIndex(item => item.url === selectedMedia.url) : -1;
 
   const goToNext = () => {
@@ -78,8 +78,9 @@ export default function GallerySection() {
             </Button>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {allItems.map((item, index) => (
+          {currentCategory && (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {allItems.map((item, index) => (
               <Card 
                 key={item.url}
                 className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" 
@@ -94,8 +95,9 @@ export default function GallerySection() {
                   />
                 </div>
               </Card>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
