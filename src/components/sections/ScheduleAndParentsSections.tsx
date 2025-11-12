@@ -145,9 +145,11 @@ export default function ScheduleAndParentsSections() {
                     Регулярные домашние упражнения - ключ к быстрому прогрессу. 
                     Получайте индивидуальные материалы после каждого занятия.
                   </p>
-                  <Button size="lg" variant="secondary" className="gap-2">
-                    <Icon name="Download" size={20} />
-                    Скачать материалы
+                  <Button size="lg" variant="secondary" className="gap-2" asChild>
+                    <a href="https://disk.yandex.ru/d/oF8Z3qYZHkTZ7Q" target="_blank" rel="noopener noreferrer">
+                      <Icon name="Download" size={20} />
+                      Скачать материалы
+                    </a>
                   </Button>
                 </div>
                 <div className="w-full md:w-auto">
