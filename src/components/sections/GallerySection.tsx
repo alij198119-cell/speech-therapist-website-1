@@ -114,20 +114,33 @@ export default function GallerySection() {
           {currentCategory && (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {allItems.map((item, index) => (
-              <Card 
+              <div
                 key={item.url}
-                className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer group" 
-                style={{ animationDelay: `${index * 100}ms` }} 
+                className="group relative overflow-hidden rounded-3xl cursor-pointer animate-slide-up"
+                style={{ animationDelay: `${index * 100}ms` }}
                 onClick={() => setSelectedMedia(item)}
               >
-                <div className="relative h-72 overflow-hidden">
+                <div className="relative h-80 overflow-hidden rounded-3xl shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:scale-[1.02]">
                   <img
                     src={item.url}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
+                  
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="flex items-center gap-2 text-white">
+                      <Icon name="Eye" size={20} className="opacity-90" />
+                      <span className="text-sm font-medium">Посмотреть</span>
+                    </div>
+                  </div>
+                  
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <Icon name="ZoomIn" size={20} className="text-primary" />
+                  </div>
                 </div>
-              </Card>
+              </div>
               ))}
             </div>
           )}
