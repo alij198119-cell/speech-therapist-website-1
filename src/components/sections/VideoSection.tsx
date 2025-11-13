@@ -108,11 +108,6 @@ export default function VideoSection() {
 
       {selectedVideo && (
         <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 animate-fade-in">
-          <div 
-            className="absolute inset-0"
-            onClick={() => closeVideo('background click')}
-          />
-          
           <div className="relative max-w-6xl w-full z-10">
             <Button
               variant="ghost"
