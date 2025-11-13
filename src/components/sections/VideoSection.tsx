@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -12,9 +12,7 @@ type VideoItem = {
 };
 
 export default function VideoSection() {
-  const openVideo = (video: VideoItem) => {
-    window.open(video.url, '_blank');
-  };
+  const [selectedVideo, setSelectedVideo] = useState<VideoItem | null>(null);
 
   const videos: VideoItem[] = [
     {
@@ -46,7 +44,7 @@ export default function VideoSection() {
                 key={video.url}
                 className="overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] cursor-pointer group border-2 border-primary/20 hover:border-primary/40 bg-gradient-to-br from-card to-muted/20"
                 style={{ animationDelay: `${index * 100}ms` }}
-                onClick={() => openVideo(video)}
+                onClick={() => setSelectedVideo(video)}
               >
                 <div className="relative h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">
                   <img
@@ -101,6 +99,29 @@ export default function VideoSection() {
           </div>
         </div>
       </section>
+
+      {selectedVideo && (
+        <div className="fixed inset-0 bg-black z-50 flex items-center justify-center p-4">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute top-4 right-4 text-white hover:bg-white/20 z-10"
+            onClick={() => setSelectedVideo(null)}
+          >
+            <Icon name="X" size={32} />
+          </Button>
+
+          <div className="w-full max-w-6xl aspect-video">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${selectedVideo.url.split('/').pop()}?autoplay=1&modestbranding=1&rel=0`}
+              title={selectedVideo.title}
+              className="w-full h-full rounded-lg"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }
