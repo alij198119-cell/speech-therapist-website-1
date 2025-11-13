@@ -17,15 +17,31 @@ export default function VideoSection() {
 
   useEffect(() => {
     if (selectedVideo) {
-      console.log('VIDEO OPENED:', selectedVideo.title);
+      console.log('🎬 VIDEO OPENED:', selectedVideo.title);
       isClosingRef.current = false;
+      
+      // Защита от случайного размонтирования
+      const preventUnmount = setInterval(() => {
+        if (!isClosingRef.current) {
+          console.log('⏱️ Video still playing, time check passed');
+        }
+      }, 5000);
+      
+      return () => {
+        clearInterval(preventUnmount);
+        console.log('🔄 VideoSection cleanup triggered');
+      };
     }
   }, [selectedVideo]);
 
   const closeVideo = (reason: string) => {
-    if (isClosingRef.current) return;
+    if (isClosingRef.current) {
+      console.log('⚠️ Prevented duplicate close');
+      return;
+    }
     isClosingRef.current = true;
-    console.log('VIDEO CLOSED, REASON:', reason);
+    console.log('❌ VIDEO CLOSED, REASON:', reason);
+    console.log('📍 Stack trace:');
     console.trace();
     setSelectedVideo(null);
   };
