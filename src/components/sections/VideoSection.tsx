@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -13,8 +13,18 @@ type VideoItem = {
 
 export default function VideoSection() {
   const [selectedVideo, setSelectedVideo] = useState<VideoItem | null>(null);
+  const isClosingRef = useRef(false);
+
+  useEffect(() => {
+    if (selectedVideo) {
+      console.log('VIDEO OPENED:', selectedVideo.title);
+      isClosingRef.current = false;
+    }
+  }, [selectedVideo]);
 
   const closeVideo = (reason: string) => {
+    if (isClosingRef.current) return;
+    isClosingRef.current = true;
     console.log('VIDEO CLOSED, REASON:', reason);
     console.trace();
     setSelectedVideo(null);
@@ -107,13 +117,18 @@ export default function VideoSection() {
       </section>
 
       {selectedVideo && (
-        <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 animate-fade-in">
+        <div 
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 animate-fade-in"
+          onMouseDown={(e) => e.stopPropagation()}
+          onClick={(e) => e.stopPropagation()}
+        >
           <div className="relative max-w-6xl w-full z-10">
             <Button
               variant="ghost"
               size="icon"
               className="absolute -top-16 right-0 text-white hover:bg-white/20 z-20"
               onClick={(e) => {
+                e.preventDefault();
                 e.stopPropagation();
                 closeVideo('close button click');
               }}
@@ -121,25 +136,21 @@ export default function VideoSection() {
               <Icon name="X" size={28} />
             </Button>
 
-            <div 
-              className="w-full aspect-video rounded-lg overflow-hidden shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            >
+            <div className="w-full aspect-video rounded-lg overflow-hidden shadow-2xl">
               <iframe
+                key={selectedVideo.url}
                 width="100%"
                 height="100%"
-                src={`https://www.youtube.com/embed/${selectedVideo.url.split('/').pop()}?autoplay=1&rel=0&modestbranding=1`}
+                src={`https://www.youtube.com/embed/${selectedVideo.url.split('/').pop()}?autoplay=1&rel=0&modestbranding=1&enablejsapi=1`}
                 title={selectedVideo.title}
                 frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                 allowFullScreen
                 className="w-full h-full"
+                style={{ pointerEvents: 'auto' }}
               />
             </div>
-            <p 
-              className="text-white text-center mt-6 text-lg font-medium drop-shadow-lg"
-              onClick={(e) => e.stopPropagation()}
-            >
+            <p className="text-white text-center mt-6 text-lg font-medium drop-shadow-lg">
               {selectedVideo.title}
             </p>
           </div>
