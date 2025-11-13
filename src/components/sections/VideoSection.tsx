@@ -123,12 +123,14 @@ export default function VideoSection() {
               <iframe
                 width="100%"
                 height="100%"
-                src={`https://www.youtube.com/embed/${selectedVideo.url.split('/').pop()}?autoplay=1`}
+                src={`https://www.youtube.com/embed/${selectedVideo.url.split('/').pop()}?autoplay=1&rel=0&modestbranding=1&fs=1&playsinline=1`}
                 title={selectedVideo.title}
                 frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
                 allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
                 className="w-full h-full"
+                style={{ border: 'none' }}
               />
             </div>
             <p className="text-white text-center mt-6 text-lg font-medium drop-shadow-lg">
