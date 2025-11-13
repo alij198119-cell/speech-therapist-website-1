@@ -59,54 +59,70 @@ export default function GallerySection() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
             <button
               onClick={() => setCurrentCategory('individual')}
               className={`
-                group relative px-8 py-4 rounded-2xl font-semibold text-base
-                transition-all duration-300 ease-out
+                group relative px-10 py-5 rounded-3xl font-bold text-base
+                transition-all duration-500 ease-out overflow-hidden
                 ${currentCategory === 'individual' 
-                  ? 'bg-primary text-primary-foreground shadow-lg scale-105' 
-                  : 'bg-background border-2 border-border hover:border-primary/50 hover:shadow-md hover:scale-102'}
+                  ? 'bg-gradient-to-br from-primary via-primary to-primary/80 text-primary-foreground shadow-2xl shadow-primary/50 scale-110' 
+                  : 'bg-gradient-to-br from-background to-muted border-2 border-border hover:border-primary hover:shadow-xl hover:scale-105'}
               `}
             >
-              <div className="flex items-center gap-2.5">
-                <Icon name="User" size={22} className={currentCategory === 'individual' ? '' : 'group-hover:scale-110 transition-transform'} />
-                <span>Индивидуальные занятия</span>
-                <Badge 
-                  variant={currentCategory === 'individual' ? 'secondary' : 'outline'}
-                  className="ml-1 px-2.5 py-0.5"
-                >
+              <div className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ${currentCategory === 'individual' ? 'animate-shimmer' : ''}`} />
+              
+              <div className="relative flex items-center gap-3">
+                <div className={`p-2 rounded-xl transition-all duration-300 ${currentCategory === 'individual' ? 'bg-white/20' : 'bg-primary/10 group-hover:bg-primary/20'}`}>
+                  <Icon name="User" size={24} className={`transition-transform duration-300 ${currentCategory === 'individual' ? 'text-white' : 'text-primary group-hover:scale-110 group-hover:rotate-12'}`} />
+                </div>
+                <span className="text-base">Индивидуальные</span>
+                <div className={`
+                  px-3 py-1 rounded-full font-bold text-sm
+                  transition-all duration-300
+                  ${currentCategory === 'individual' 
+                    ? 'bg-white/25 text-white backdrop-blur-sm' 
+                    : 'bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white'}
+                `}>
                   {individualItems.length}
-                </Badge>
+                </div>
               </div>
+              
               {currentCategory === 'individual' && (
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 bg-primary rotate-45" />
+                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-primary animate-bounce-slow" />
               )}
             </button>
             
             <button
               onClick={() => setCurrentCategory('group')}
               className={`
-                group relative px-8 py-4 rounded-2xl font-semibold text-base
-                transition-all duration-300 ease-out
+                group relative px-10 py-5 rounded-3xl font-bold text-base
+                transition-all duration-500 ease-out overflow-hidden
                 ${currentCategory === 'group' 
-                  ? 'bg-primary text-primary-foreground shadow-lg scale-105' 
-                  : 'bg-background border-2 border-border hover:border-primary/50 hover:shadow-md hover:scale-102'}
+                  ? 'bg-gradient-to-br from-primary via-primary to-primary/80 text-primary-foreground shadow-2xl shadow-primary/50 scale-110' 
+                  : 'bg-gradient-to-br from-background to-muted border-2 border-border hover:border-primary hover:shadow-xl hover:scale-105'}
               `}
             >
-              <div className="flex items-center gap-2.5">
-                <Icon name="Users" size={22} className={currentCategory === 'group' ? '' : 'group-hover:scale-110 transition-transform'} />
-                <span>Групповые занятия</span>
-                <Badge 
-                  variant={currentCategory === 'group' ? 'secondary' : 'outline'}
-                  className="ml-1 px-2.5 py-0.5"
-                >
+              <div className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ${currentCategory === 'group' ? 'animate-shimmer' : ''}`} />
+              
+              <div className="relative flex items-center gap-3">
+                <div className={`p-2 rounded-xl transition-all duration-300 ${currentCategory === 'group' ? 'bg-white/20' : 'bg-primary/10 group-hover:bg-primary/20'}`}>
+                  <Icon name="Users" size={24} className={`transition-transform duration-300 ${currentCategory === 'group' ? 'text-white' : 'text-primary group-hover:scale-110 group-hover:rotate-12'}`} />
+                </div>
+                <span className="text-base">Групповые</span>
+                <div className={`
+                  px-3 py-1 rounded-full font-bold text-sm
+                  transition-all duration-300
+                  ${currentCategory === 'group' 
+                    ? 'bg-white/25 text-white backdrop-blur-sm' 
+                    : 'bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white'}
+                `}>
                   {groupItems.length}
-                </Badge>
+                </div>
               </div>
+              
               {currentCategory === 'group' && (
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 bg-primary rotate-45" />
+                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-primary animate-bounce-slow" />
               )}
             </button>
           </div>
