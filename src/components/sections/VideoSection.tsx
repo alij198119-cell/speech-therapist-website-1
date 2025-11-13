@@ -101,25 +101,29 @@ export default function VideoSection() {
       </section>
 
       {selectedVideo && (
-        <div
-          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 animate-fade-in"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) {
-              setSelectedVideo(null);
-            }
-          }}
-        >
-          <div className="relative max-w-6xl w-full">
+        <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 animate-fade-in">
+          <div 
+            className="absolute inset-0"
+            onClick={() => setSelectedVideo(null)}
+          />
+          
+          <div className="relative max-w-6xl w-full z-10">
             <Button
               variant="ghost"
               size="icon"
-              className="absolute -top-16 right-0 text-white hover:bg-white/20 z-10"
-              onClick={() => setSelectedVideo(null)}
+              className="absolute -top-16 right-0 text-white hover:bg-white/20 z-20"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedVideo(null);
+              }}
             >
               <Icon name="X" size={28} />
             </Button>
 
-            <div className="w-full aspect-video rounded-lg overflow-hidden shadow-2xl">
+            <div 
+              className="w-full aspect-video rounded-lg overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
               <iframe
                 width="100%"
                 height="100%"
@@ -129,11 +133,14 @@ export default function VideoSection() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
                 allowFullScreen
                 referrerPolicy="strict-origin-when-cross-origin"
-                className="w-full h-full"
+                className="w-full h-full pointer-events-auto"
                 style={{ border: 'none' }}
               />
             </div>
-            <p className="text-white text-center mt-6 text-lg font-medium drop-shadow-lg">
+            <p 
+              className="text-white text-center mt-6 text-lg font-medium drop-shadow-lg"
+              onClick={(e) => e.stopPropagation()}
+            >
               {selectedVideo.title}
             </p>
           </div>
