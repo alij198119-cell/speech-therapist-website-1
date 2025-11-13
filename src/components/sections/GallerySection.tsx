@@ -59,23 +59,56 @@ export default function GallerySection() {
             </p>
           </div>
 
-          <div className="flex justify-center gap-4 mb-8">
-            <Button
-              variant={currentCategory === 'individual' ? 'default' : 'outline'}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            <button
               onClick={() => setCurrentCategory('individual')}
-              className="gap-2"
+              className={`
+                group relative px-8 py-4 rounded-2xl font-semibold text-base
+                transition-all duration-300 ease-out
+                ${currentCategory === 'individual' 
+                  ? 'bg-primary text-primary-foreground shadow-lg scale-105' 
+                  : 'bg-background border-2 border-border hover:border-primary/50 hover:shadow-md hover:scale-102'}
+              `}
             >
-              <Icon name="User" size={20} />
-              Индивидуальные занятия ({individualItems.length})
-            </Button>
-            <Button
-              variant={currentCategory === 'group' ? 'default' : 'outline'}
+              <div className="flex items-center gap-2.5">
+                <Icon name="User" size={22} className={currentCategory === 'individual' ? '' : 'group-hover:scale-110 transition-transform'} />
+                <span>Индивидуальные занятия</span>
+                <Badge 
+                  variant={currentCategory === 'individual' ? 'secondary' : 'outline'}
+                  className="ml-1 px-2.5 py-0.5"
+                >
+                  {individualItems.length}
+                </Badge>
+              </div>
+              {currentCategory === 'individual' && (
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 bg-primary rotate-45" />
+              )}
+            </button>
+            
+            <button
               onClick={() => setCurrentCategory('group')}
-              className="gap-2"
+              className={`
+                group relative px-8 py-4 rounded-2xl font-semibold text-base
+                transition-all duration-300 ease-out
+                ${currentCategory === 'group' 
+                  ? 'bg-primary text-primary-foreground shadow-lg scale-105' 
+                  : 'bg-background border-2 border-border hover:border-primary/50 hover:shadow-md hover:scale-102'}
+              `}
             >
-              <Icon name="Users" size={20} />
-              Групповые занятия ({groupItems.length})
-            </Button>
+              <div className="flex items-center gap-2.5">
+                <Icon name="Users" size={22} className={currentCategory === 'group' ? '' : 'group-hover:scale-110 transition-transform'} />
+                <span>Групповые занятия</span>
+                <Badge 
+                  variant={currentCategory === 'group' ? 'secondary' : 'outline'}
+                  className="ml-1 px-2.5 py-0.5"
+                >
+                  {groupItems.length}
+                </Badge>
+              </div>
+              {currentCategory === 'group' && (
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 bg-primary rotate-45" />
+              )}
+            </button>
           </div>
 
           {currentCategory && (
