@@ -136,37 +136,7 @@ export default function ScheduleAndParentsSections() {
             </div>
           </div>
 
-          <Card className="bg-gradient-to-br from-primary to-secondary text-white shadow-2xl animate-fade-in">
-            <CardContent className="p-8 md:p-12">
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="flex-1">
-                  <h3 className="text-3xl font-bold mb-4">Домашние задания</h3>
-                  <p className="text-white/90 mb-6 text-lg">
-                    Регулярные домашние упражнения - ключ к быстрому прогрессу. 
-                    Получайте индивидуальные материалы после каждого занятия.
-                  </p>
-                  <Button size="lg" variant="secondary" className="gap-2">
-                    <a href="https://disk.yandex.ru/d/oF8Z3qYZHkTZ7Q" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                      <Icon name="Download" size={20} />
-                      Скачать материалы
-                    </a>
-                  </Button>
-                </div>
-                <div className="w-full md:w-auto">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 space-y-4">
-                    {['Артикуляционная гимнастика', 'Речевые игры', 'Дыхательные упражнения'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                          <Icon name="Check" size={18} />
-                        </div>
-                        <span className="font-medium">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+
         </div>
       </section>
     </>
