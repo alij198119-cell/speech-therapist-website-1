@@ -8,7 +8,7 @@ export default function ContactsSection() {
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12 animate-fade-in">
           <Badge className="mb-4">Контакты</Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4">
             Свяжитесь со мной
           </h2>
           <p className="text-lg text-muted-foreground">

@@ -34,7 +34,7 @@ export default function VideoSection() {
               <Icon name="Video" size={16} className="mr-1" />
               Видео материалы
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Видео с занятий</h2>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4">Видео с занятий</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Посмотрите как проходят занятия в нашем детском саду
             </p>
@@ -48,7 +48,7 @@ export default function VideoSection() {
                 style={{ animationDelay: `${index * 100}ms` }}
                 onClick={() => openVideo(video)}
               >
-                <div className="relative h-[500px] overflow-hidden">
+                <div className="relative h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">
                   <img
                     src={video.thumbnail}
                     alt={video.title}
@@ -66,7 +66,7 @@ export default function VideoSection() {
                     </div>
                   </div>
                   
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 lg:p-8">
                     <div className="flex items-start gap-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-3">
@@ -77,7 +77,7 @@ export default function VideoSection() {
                             Видеообзор
                           </Badge>
                         </div>
-                        <h3 className="font-bold text-2xl mb-2 text-white drop-shadow-lg">
+                        <h3 className="font-bold text-lg md:text-xl lg:text-2xl mb-2 text-white drop-shadow-lg">
                           {video.title}
                         </h3>
                         <p className="text-white/90 text-base drop-shadow-md flex items-center gap-2">

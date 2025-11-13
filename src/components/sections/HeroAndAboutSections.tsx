@@ -27,7 +27,7 @@ export default function HeroAndAboutSections({ scrollToSection, showAboutSection
               <Badge className="bg-primary/10 text-primary hover:bg-primary/20">
                 Учитель-логопед
               </Badge>
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Правильная речь - 
                 <span className="text-primary"> залог успеха</span>
               </h1>
@@ -66,7 +66,7 @@ export default function HeroAndAboutSections({ scrollToSection, showAboutSection
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in order-2 md:order-1">
               <Badge className="mb-4">О логопеде</Badge>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Евсеева Елена Сергеевна</h2>
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6">Евсеева Елена Сергеевна</h2>
               <p className="text-lg text-muted-foreground mb-4">
                 Помогаю детям преодолевать речевые трудности и развивать коммуникативные навыки.
               </p>
@@ -107,7 +107,7 @@ export default function HeroAndAboutSections({ scrollToSection, showAboutSection
                 <img
                   src="https://cdn.poehali.dev/files/2e32b223-7a25-4182-acb0-1125683c4148.jpg"
                   alt="Учитель-логопед"
-                  className="relative rounded-3xl shadow-2xl w-full h-[500px] object-contain"
+                  className="relative rounded-3xl shadow-2xl w-full h-[300px] md:h-[400px] lg:h-[500px] object-contain"
                 />
               </div>
             </div>
@@ -119,7 +119,7 @@ export default function HeroAndAboutSections({ scrollToSection, showAboutSection
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12 animate-fade-in">
             <Badge className="mb-4">Квалификация</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4">
               Сертификаты и дипломы
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -165,7 +165,7 @@ export default function HeroAndAboutSections({ scrollToSection, showAboutSection
                 }}
               >
                 {'images' in cert && cert.images ? (
-                  <div className="relative h-80">
+                  <div className="relative h-60 md:h-72 lg:h-80">
                     <img 
                       src={cert.images[0]} 
                       alt={cert.title}
@@ -180,7 +180,7 @@ export default function HeroAndAboutSections({ scrollToSection, showAboutSection
                     </div>
                   </div>
                 ) : 'image' in cert && cert.image ? (
-                  <div className="relative h-80">
+                  <div className="relative h-60 md:h-72 lg:h-80">
                     <img 
                       src={cert.image} 
                       alt={cert.title}

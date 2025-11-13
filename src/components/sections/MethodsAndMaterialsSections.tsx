@@ -69,7 +69,7 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
         <div className="container mx-auto">
           <div className="text-center mb-12 animate-fade-in">
             <Badge className="mb-4">Наши методики</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4">
               Комплексный подход к развитию речи
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -99,11 +99,11 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
             <img
               src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/d75e3ab7-fb1d-4ad6-bdac-9fd675e73e83.jpg"
               alt="Методики работы"
-              className="w-full h-[400px] object-cover"
+              className="w-full h-[250px] md:h-[350px] lg:h-[400px] object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-              <div className="p-8 text-white">
-                <h3 className="text-3xl font-bold mb-2">Игровой формат занятий</h3>
+              <div className="p-4 md:p-6 lg:p-8 text-white">
+                <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2">Игровой формат занятий</h3>
                 <p className="text-lg text-white/90">Дети учатся легко и с удовольствием</p>
               </div>
             </div>
@@ -115,7 +115,7 @@ export default function MethodsAndMaterialsSections({ handleDownload }: MethodsA
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12 animate-fade-in">
             <Badge className="mb-4">Полезные материалы</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4">
               Скачайте бесплатно
             </h2>
             <p className="text-lg text-muted-foreground">

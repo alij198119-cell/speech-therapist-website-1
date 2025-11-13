@@ -38,7 +38,7 @@ export default function ScheduleAndParentsSections() {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12 animate-fade-in">
             <Badge className="mb-4">Расписание</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4">
               График работы
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -101,7 +101,7 @@ export default function ScheduleAndParentsSections() {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
             <div className="animate-fade-in">
               <Badge className="mb-4">Родителям</Badge>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4">
                 Ответы на частые вопросы
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
@@ -111,7 +111,7 @@ export default function ScheduleAndParentsSections() {
                 <img
                   src="https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/fe4d664d-41ca-4cc1-9ecf-234d6bbc3948.jpg"
                   alt="Занятия с родителями"
-                  className="w-full h-[300px] object-cover"
+                  className="w-full h-[200px] md:h-[250px] lg:h-[300px] object-cover"
                 />
               </div>
             </div>

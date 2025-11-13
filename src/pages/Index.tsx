@@ -5,12 +5,15 @@ import HeroAndAboutSections from '@/components/sections/HeroAndAboutSections';
 import MethodsAndMaterialsSections from '@/components/sections/MethodsAndMaterialsSections';
 import ScheduleAndParentsSections from '@/components/sections/ScheduleAndParentsSections';
 import ContactsSection from '@/components/sections/ContactsSection';
+import Icon from '@/components/ui/icon';
+import { Button } from '@/components/ui/button';
 
 const BACKEND_URL = 'https://functions.poehali.dev/4a75476f-857b-4505-813c-ced5409e0204';
 
 export default function Index() {
   const [activeSection, setActiveSection] = useState('home');
   const [showAboutSection, setShowAboutSection] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleDownload = async (materialId: string, materialName: string) => {
     try {
@@ -37,6 +40,7 @@ export default function Index() {
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
+    setMobileMenuOpen(false);
     if (sectionId === 'о логопеде') {
       setShowAboutSection(true);
     }
@@ -47,15 +51,16 @@ export default function Index() {
   return (
     <div className="min-h-screen">
       <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
-                <span className="text-2xl">🗣️</span>
+              <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
+                <span className="text-lg md:text-2xl">🗣️</span>
               </div>
-              <span className="font-bold text-xl text-foreground">Логопед в ДОУ №16 рп. Лесогорск</span>
+              <span className="font-bold text-xs sm:text-sm md:text-base lg:text-xl text-foreground">Логопед в ДОУ №16 рп. Лесогорск</span>
             </div>
-            <div className="hidden md:flex gap-6">
+            
+            <div className="hidden lg:flex gap-6">
               {['Главная', 'О логопеде', 'Методики', 'Галерея', 'Видео', 'Материалы', 'Расписание', 'Родителям', 'Контакты'].map((item) => (
                 <button
                   key={item}
@@ -68,7 +73,36 @@ export default function Index() {
                 </button>
               ))}
             </div>
+
+            <Button
+              variant="ghost"
+              size="icon"
+              className="lg:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <Icon name={mobileMenuOpen ? 'X' : 'Menu'} size={24} />
+            </Button>
           </div>
+
+          {mobileMenuOpen && (
+            <div className="lg:hidden mt-4 pb-4 border-t pt-4">
+              <div className="flex flex-col gap-3">
+                {['Главная', 'О логопеде', 'Методики', 'Галерея', 'Видео', 'Материалы', 'Расписание', 'Родителям', 'Контакты'].map((item) => (
+                  <button
+                    key={item}
+                    onClick={() => scrollToSection(item.toLowerCase())}
+                    className={`text-left px-4 py-2 rounded-lg font-medium transition-colors ${
+                      activeSection === item.toLowerCase() 
+                        ? 'bg-primary text-primary-foreground' 
+                        : 'text-muted-foreground hover:bg-muted'
+                    }`}
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 

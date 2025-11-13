@@ -53,7 +53,7 @@ export default function GallerySection() {
         <div className="container mx-auto">
           <div className="text-center mb-12 animate-fade-in">
             <Badge className="mb-4">Наши успехи</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Галерея моментов</h2>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4">Галерея моментов</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Фотографии с занятий, достижения детей и радостные моменты обучения
             </p>
@@ -63,7 +63,7 @@ export default function GallerySection() {
             <button
               onClick={() => setCurrentCategory('individual')}
               className={`
-                group relative px-10 py-5 rounded-3xl font-bold text-base
+                group relative px-4 py-3 md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-3xl font-bold text-base
                 transition-all duration-500 ease-out overflow-hidden
                 ${currentCategory === 'individual' 
                   ? 'bg-gradient-to-br from-primary via-primary to-primary/80 text-primary-foreground shadow-2xl shadow-primary/50 scale-110' 
@@ -76,7 +76,7 @@ export default function GallerySection() {
                 <div className={`p-2 rounded-xl transition-all duration-300 ${currentCategory === 'individual' ? 'bg-white/20' : 'bg-primary/10 group-hover:bg-primary/20'}`}>
                   <Icon name="User" size={24} className={`transition-transform duration-300 ${currentCategory === 'individual' ? 'text-white' : 'text-primary group-hover:scale-110 group-hover:rotate-12'}`} />
                 </div>
-                <span className="text-base">Индивидуальные</span>
+                <span className="text-sm md:text-base">Индивидуальные</span>
                 <div className={`
                   px-3 py-1 rounded-full font-bold text-sm
                   transition-all duration-300
@@ -96,7 +96,7 @@ export default function GallerySection() {
             <button
               onClick={() => setCurrentCategory('group')}
               className={`
-                group relative px-10 py-5 rounded-3xl font-bold text-base
+                group relative px-4 py-3 md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-3xl font-bold text-base
                 transition-all duration-500 ease-out overflow-hidden
                 ${currentCategory === 'group' 
                   ? 'bg-gradient-to-br from-primary via-primary to-primary/80 text-primary-foreground shadow-2xl shadow-primary/50 scale-110' 
@@ -109,7 +109,7 @@ export default function GallerySection() {
                 <div className={`p-2 rounded-xl transition-all duration-300 ${currentCategory === 'group' ? 'bg-white/20' : 'bg-primary/10 group-hover:bg-primary/20'}`}>
                   <Icon name="Users" size={24} className={`transition-transform duration-300 ${currentCategory === 'group' ? 'text-white' : 'text-primary group-hover:scale-110 group-hover:rotate-12'}`} />
                 </div>
-                <span className="text-base">Групповые</span>
+                <span className="text-sm md:text-base">Групповые</span>
                 <div className={`
                   px-3 py-1 rounded-full font-bold text-sm
                   transition-all duration-300
@@ -136,7 +136,7 @@ export default function GallerySection() {
                 style={{ animationDelay: `${index * 100}ms` }}
                 onClick={() => setSelectedMedia(item)}
               >
-                <div className="relative h-80 overflow-hidden rounded-3xl shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:scale-[1.02]">
+                <div className="relative h-60 md:h-72 lg:h-80 overflow-hidden rounded-3xl shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:scale-[1.02]">
                   <img
                     src={item.url}
                     alt={item.title}
