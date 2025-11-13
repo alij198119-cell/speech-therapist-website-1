@@ -22,7 +22,7 @@ export default function VideoSection() {
 
   const videos: VideoItem[] = [
     {
-      url: 'https://limewire.com/d/o5VkT#MGU3PAKFiK',
+      url: 'https://youtu.be/z1ifl5WqGZI',
       title: 'Видео занятия - логопедическая работа',
       description: 'Фрагменты индивидуальных и групповых занятий с детьми',
       thumbnail: 'https://cdn.poehali.dev/projects/cb36eb85-ae57-4cae-b98f-fed5b756a9f6/files/3802d00f-edb8-4383-b3f2-2fa5c71291a9.jpg'
@@ -127,19 +127,19 @@ export default function VideoSection() {
             </Button>
 
             <div 
-              className="w-full aspect-video rounded-lg overflow-hidden shadow-2xl bg-black"
+              className="w-full aspect-video rounded-lg overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <video
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${selectedVideo.url.split('/').pop()}?autoplay=1&rel=0&modestbranding=1`}
+                title={selectedVideo.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
                 className="w-full h-full"
-                controls
-                autoPlay
-                playsInline
-                controlsList="nodownload"
-              >
-                <source src={selectedVideo.url} type="video/mp4" />
-                Ваш браузер не поддерживает видео.
-              </video>
+              />
             </div>
             <p 
               className="text-white text-center mt-6 text-lg font-medium drop-shadow-lg"
