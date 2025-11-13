@@ -87,7 +87,7 @@ export default function ScheduleAndParentsSections() {
                   </p>
                   <p className="text-sm text-muted-foreground flex items-start gap-2">
                     <Icon name="Users" size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                    <span><strong>Групповые занятия:</strong> 30 минут, 3 раза в неделю</span>
+                    <span>Групповые занятия проводятся по 30 минут, 3 раза в неделю</span>
                   </p>
                 </div>
               </div>
