@@ -14,6 +14,12 @@ type VideoItem = {
 export default function VideoSection() {
   const [selectedVideo, setSelectedVideo] = useState<VideoItem | null>(null);
 
+  const closeVideo = (reason: string) => {
+    console.log('VIDEO CLOSED, REASON:', reason);
+    console.trace();
+    setSelectedVideo(null);
+  };
+
   const videos: VideoItem[] = [
     {
       url: 'https://youtu.be/z1ifl5WqGZI',
@@ -104,7 +110,7 @@ export default function VideoSection() {
         <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 animate-fade-in">
           <div 
             className="absolute inset-0"
-            onClick={() => setSelectedVideo(null)}
+            onClick={() => closeVideo('background click')}
           />
           
           <div className="relative max-w-6xl w-full z-10">
@@ -114,7 +120,7 @@ export default function VideoSection() {
               className="absolute -top-16 right-0 text-white hover:bg-white/20 z-20"
               onClick={(e) => {
                 e.stopPropagation();
-                setSelectedVideo(null);
+                closeVideo('close button click');
               }}
             >
               <Icon name="X" size={28} />
