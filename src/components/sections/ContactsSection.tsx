@@ -11,9 +11,6 @@ export default function ContactsSection() {
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4">
             Свяжитесь со мной
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Запишитесь на консультацию или задайте вопрос
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 animate-slide-up">
