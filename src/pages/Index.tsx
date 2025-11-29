@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import GallerySection from '@/components/sections/GallerySection';
-import VideoSection from '@/components/sections/VideoSection';
 import HeroAndAboutSections from '@/components/sections/HeroAndAboutSections';
 import MethodsAndMaterialsSections from '@/components/sections/MethodsAndMaterialsSections';
 import ScheduleAndParentsSections from '@/components/sections/ScheduleAndParentsSections';
@@ -61,7 +59,7 @@ export default function Index() {
             </div>
             
             <div className="hidden lg:flex gap-6">
-              {['Главная', 'О логопеде', 'Методики', 'Галерея', 'Видео', 'Материалы', 'Расписание', 'Родителям', 'Контакты'].map((item) => (
+              {['Главная', 'О логопеде', 'Методики', 'Материалы', 'Расписание', 'Родителям', 'Контакты'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -87,7 +85,7 @@ export default function Index() {
           {mobileMenuOpen && (
             <div className="lg:hidden mt-4 pb-4 border-t pt-4">
               <div className="flex flex-col gap-3">
-                {['Главная', 'О логопеде', 'Методики', 'Галерея', 'Видео', 'Материалы', 'Расписание', 'Родителям', 'Контакты'].map((item) => (
+                {['Главная', 'О логопеде', 'Методики', 'Материалы', 'Расписание', 'Родителям', 'Контакты'].map((item) => (
                   <button
                     key={item}
                     onClick={() => scrollToSection(item.toLowerCase())}
@@ -109,10 +107,6 @@ export default function Index() {
       <HeroAndAboutSections scrollToSection={scrollToSection} showAboutSection={showAboutSection} />
 
       <MethodsAndMaterialsSections handleDownload={handleDownload} />
-
-      <GallerySection />
-
-      <VideoSection />
 
       <ScheduleAndParentsSections />
 
