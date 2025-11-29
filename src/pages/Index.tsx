@@ -59,7 +59,7 @@ export default function Index() {
             </div>
             
             <div className="hidden lg:flex gap-6">
-              {['Главная', 'О логопеде', 'Методики', 'Материалы', 'Расписание', 'Родителям', 'Контакты'].map((item) => (
+              {['Главная', 'О логопеде', 'Методики', 'Материалы', 'Родителям', 'Контакты'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -85,7 +85,7 @@ export default function Index() {
           {mobileMenuOpen && (
             <div className="lg:hidden mt-4 pb-4 border-t pt-4">
               <div className="flex flex-col gap-3">
-                {['Главная', 'О логопеде', 'Методики', 'Материалы', 'Расписание', 'Родителям', 'Контакты'].map((item) => (
+                {['Главная', 'О логопеде', 'Методики', 'Материалы', 'Родителям', 'Контакты'].map((item) => (
                   <button
                     key={item}
                     onClick={() => scrollToSection(item.toLowerCase())}

@@ -1,18 +1,8 @@
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 
 export default function ScheduleAndParentsSections() {
-  const schedule = [
-    { day: 'Понедельник', time: '13:00 - 17:00', groups: 'Индивидуальные занятия' },
-    { day: 'Вторник', time: '9:00 - 13:00', groups: 'Групповые и индивидуальные занятия' },
-    { day: 'Среда', time: '9:00 - 13:00', groups: 'Групповые и индивидуальные занятия' },
-    { day: 'Четверг', time: '9:00 - 13:00', groups: 'Групповые и индивидуальные занятия' },
-    { day: 'Пятница', time: '13:00 - 17:00', groups: 'Индивидуальные занятия' }
-  ];
-
   const parentsInfo = [
     {
       question: 'Когда нужно обратиться к логопеду?',
@@ -34,68 +24,6 @@ export default function ScheduleAndParentsSections() {
 
   return (
     <>
-      <section id="расписание" className="py-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12 animate-fade-in">
-            <Badge className="mb-4">Расписание</Badge>
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4">
-              График работы
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Занятия проходят ежедневно по группам и индивидуально
-            </p>
-          </div>
-
-          <Card className="shadow-lg animate-slide-up">
-            <CardContent className="p-0">
-              {schedule.map((item, index) => (
-                <div
-                  key={index}
-                  className={`p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-muted/50 transition-colors ${
-                    index !== schedule.length - 1 ? 'border-b' : ''
-                  }`}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">
-                      {index + 1}
-                    </div>
-                    <div>
-                      <div className="font-semibold text-lg">{item.day}</div>
-                      <div className="text-muted-foreground">{item.groups}</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Icon name="Clock" size={18} />
-                    <span className="font-medium">{item.time}</span>
-                  </div>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-
-          <div className="mt-8 p-6 bg-primary/5 rounded-2xl border-2 border-primary/20 animate-fade-in">
-            <div className="flex gap-4">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Icon name="Info" size={24} className="text-primary" />
-              </div>
-              <div>
-                <h4 className="font-semibold text-lg mb-3">Важно знать</h4>
-                <div className="space-y-2">
-                  <p className="text-sm text-muted-foreground flex items-start gap-2">
-                    <Icon name="User" size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                    <span>Индивидуальные занятия проводятся по 20 минут, 2 раза в неделю</span>
-                  </p>
-                  <p className="text-sm text-muted-foreground flex items-start gap-2">
-                    <Icon name="Users" size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                    <span>Групповые занятия проводятся по 30 минут, 3 раза в неделю</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="родителям" className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto max-w-5xl">
           <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
